@@ -1,11 +1,12 @@
 import React from 'react'
+import HappyHoundLogo from '../assets/hh (1).png'
 
 const Nav = () => {
     return(
         <nav>
             <div className='navContainer'>
                 <a href="">
-                    <img src="./assets/hh(1.png)" alt="" />
+                    <img src={HappyHoundLogo} alt="" />
                 </a>
                 <ul className='navLinks'>
                     <li className='navList'>
