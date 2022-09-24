@@ -1,3 +1,8 @@
+
+
+import React, { useState } from 'react';
+import  Register  from './components/Register'
+import  Login  from './components/Login'
 import './App.css';
 import Nav from './components/Nav'
 import Landing from './components/Landing';
@@ -7,8 +12,16 @@ function App() {
     <div className="App">
       <Nav/>
       <Landing/>
+      
+      
     </div>
+      
+      
   );
 }
 
 export default App;
+
+
+
+
