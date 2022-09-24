@@ -6,11 +6,15 @@ function Landing() {
     <section id='landing'>
         <header>
             <div className="headerContainer">
-                <div className="header__description">
+                <div className="headerDescription">
                     <img className='landingPagePhoto' src={LandingPagePhoto} alt="" />
-                    <h1>America's Leading Brand for Dog Accessories</h1>
-                    <button>Shop Now</button>
                 </div>
+                <div className='headerCaption'>
+                        <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
+                        <a href="/" className='shopButtonTag'>
+                            <button className='shopButton'>Shop Now</button>
+                        </a>
+                    </div>
             </div>
         </header>
     </section>
