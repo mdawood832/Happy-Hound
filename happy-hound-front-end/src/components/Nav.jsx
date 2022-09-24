@@ -1,5 +1,6 @@
 import React from 'react'
 import HappyHoundLogo from '../assets/hh (1).png'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Nav = () => {
     return(
@@ -23,7 +24,7 @@ const Nav = () => {
 
                     <li className='navList'>
                         <a href="/" className='navLink'>
-                            Cart
+                        <FontAwesomeIcon icon="cart-shopping" />
                         </a>
                     </li>
 
