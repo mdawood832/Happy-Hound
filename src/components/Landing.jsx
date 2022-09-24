@@ -1,5 +1,6 @@
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
+import Featured from './Featured'
 
 function Landing() {
   return (
