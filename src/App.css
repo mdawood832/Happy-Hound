@@ -2,13 +2,37 @@
   font-family: 'Quattrocento', serif;
 }
 
-.logo{
-  width: 250px;
-}
-
 .navLinks{
   text-decoration: none;
   list-style: none;
+  display: flex;
+  align-items:center;
+}
+
+.navList{
+  padding: 12px;
+}
+
+
+.navContainer {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+.logo{
+  width: 250px;
+  position: absolute;
+  left:0;
+  top:0;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 /* LANDING COMPONENT  */

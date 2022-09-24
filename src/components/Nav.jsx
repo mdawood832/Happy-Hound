@@ -6,9 +6,12 @@ const Nav = () => {
     return(
         <nav>
             <div className='navContainer'>
+                <div className='Logo'>
                 <a href="">
                     <img className='logo' src={HappyHoundLogo} alt="" />
                 </a>
+                </div>
+
                 <ul className='navLinks'>
                     <li className='navList'>
                         <a href="/" className='navLink'>
