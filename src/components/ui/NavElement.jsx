@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NavElement({name}) {
+const  NavElement = ({name})=> {
   return (
     <li className='navList'>
         <a href="/" className='navLink'>

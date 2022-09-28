@@ -3,7 +3,7 @@ import LandingPagePhoto from '../assets/landingPagePhoto.png'
 import Featured from './Featured'
 import ShopNow from './ui/ShopNow'
 
-function Landing() {
+const Landing = () => {
   return (
     <section id='landing'>
         <header>

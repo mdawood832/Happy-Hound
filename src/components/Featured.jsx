@@ -2,7 +2,7 @@ import React from 'react'
 import Features from './ui/Features'
 import { Products } from '../Products.js'
 
-function Featured() {
+const Featured = () => {
     // console.log(Products)
   return (
     <section id='features'>

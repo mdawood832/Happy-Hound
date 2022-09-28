@@ -1,7 +1,8 @@
 import React from 'react'
 import ShopNow from './ui/ShopNow'
+import '../css/ExploreMore.css'
 
-function ExploreMore() {
+const ExploreMore = () => {
   return (
     <section id='ExploreMore'>
         <div className='container'>

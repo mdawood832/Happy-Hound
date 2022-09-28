@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-function Features({Products}) {
+const Features = ({Products}) => {
   return (
     <div className='dogAccesorie'>
 

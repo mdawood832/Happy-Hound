@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ShopNow() {
+const ShopNow = () => {
   return (
     <a href="/" className='shopButtonTag'>
         <button className='shopButton'>Shop Now</button>

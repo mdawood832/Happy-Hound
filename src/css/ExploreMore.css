@@ -1,0 +1,11 @@
+#ExploreMore{ 
+    background-color: #DCDCDC;
+    height: 120px;
+    padding: 56px 0px;
+}
+
+
+h2{
+    display: flex;
+    justify-content: center;
+}
