@@ -61,7 +61,7 @@ class Register extends Component {
 						/>
 					</div>
 
-					<div className="pasword">
+					<div className="password">
 						<input
 							type="password"
 							placeholder="Password"
