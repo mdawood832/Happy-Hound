@@ -1,45 +1,25 @@
-  import React, { useState } from 'react';
+   import React from 'react';
 
- 
- 
-  const Login = () => {
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-   
-    
-    const handleSubmit = (e) => {
-        e.preventDefault(); // prevent the page from refreshing
-        console.log(email, password); // log the email and password to the console
-    };
+
 
     
-    return (
-        <div>
-        <h2>Login</h2>
-        <form onSubmit={handleSubmit}>
-            <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email"
-            required
-            />
-            <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
-            required
-            />
-            <button type="submit">Login</button>
-        </form>
-        </div>
-    );
-    };
+    const Login = () => {
+        return(
+            <div className='loginContainer'>
+                <div className='loginForm'>
+                    <h1>Sign In</h1>
+                    <form>
+                        <label htmlFor="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" id="password" placeholder="Password" />
+                        <button type="submit">Sign In</button>
+                    </form>
+                </div>
+            </div>
+        )
+    }
      
     export default Login;
-     
-     
-
- 
+    

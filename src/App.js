@@ -12,6 +12,11 @@ function App() {
     <div className="App">
       <Nav/>
       <Landing/>
+      <Login/>
+      <Register/>
+       
+       
+        
       
       
     </div>
