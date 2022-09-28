@@ -1,7 +1,9 @@
 import React from 'react'
 import Features from './ui/Features'
+import { Products } from '../Products.js'
 
 function Featured() {
+    // console.log(Products)
   return (
     <section id='features'>
         <div className='container'>
@@ -11,13 +13,10 @@ function Featured() {
                 </h2>
 
                 <div className='dogAccessories'>
-                  <Features/>
-                  <Features/>
-                  <Features/>
+                  <Features Products={Products}/>
+                  <Features Products={Products}/>
+                  <Features Products={Products}/>
                 </div>
-
-
-
 
             </div>
         </div>

@@ -1,7 +1,9 @@
-import './App.css';
+import './css/App.css'
 import Nav from './components/Nav'
 import Landing from './components/Landing';
 import Featured from './components/Featured';
+import ExploreMore from './components/ExploreMore';
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Nav/>
       <Landing/>
       <Featured/>
+      <ExploreMore/>
     </div>
   );
 }

@@ -2,19 +2,19 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-function Features() {
+function Features({Products}) {
   return (
     <div className='dogAccesorie'>
 
         <a href="">
             <figure className='dogAccesorieWrapper'>
-                <img className='dogAccesorieImage' src='https://i.ibb.co/Hnw8pzC/dogBowl.png' alt="" />
+                <img className='dogAccesorieImage' src={Products.image} alt="" />
             </figure>
         </a>
 
         <div className='dogAccesorieTitle'>
             <a href="/" className='dogAccesorieTitleLink'>
-                Dog bowl
+                {Products.name}
             </a>
         </div>
 
@@ -27,7 +27,7 @@ function Features() {
         </div>
 
         <div className='dogAcesoriePrices'>
-            <span className="dogPrice">$15.99</span>
+            <span className="dogPrice">{Products.price}</span>
         </div>
 
     </div>
