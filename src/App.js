@@ -26,9 +26,21 @@ class App extends Component {
     }
   }
 
+  getProducts = () => {
+    fetch(baseURL + '/products')
+      .then(res => {
+          if(res.status === 200){
+            return res.json()
+          } else {
+            return []
+          }
+      }).then(data =>{
+          console.log(data)
+          this.setState({products: data.products})
+      })
+  }
 
-
-
+  
 
   render() {
     return (
