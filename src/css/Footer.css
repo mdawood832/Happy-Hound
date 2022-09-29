@@ -25,5 +25,11 @@ footer{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 24px;
+}
+
+.footerCopyright{
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
 }
