@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development' ){
   baseURL = 'heroku backend uRL '
 }
 
-console.log('current base URL' , baseURL)
+// console.log('current base URL' , baseURL)
 
 
 class App extends Component {
@@ -25,6 +25,12 @@ class App extends Component {
       products: []
     }
   }
+
+
+  componentDidMount() {
+    this.getProducts()
+  }
+
 
   getProducts = () => {
     fetch(baseURL + '/products')
@@ -40,16 +46,27 @@ class App extends Component {
       })
   }
 
-  
 
   render() {
     return (
       <div className='App'>
         <Nav/>
         <Landing/>
-        <Featured/>
+        {/* <Featured/> */}
+        <table>
+        <tbody>
+          { this.state.products.map(products => {
+              return (
+                <tr>
+                  <td key={products._id} > {products.name }</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
         <ExploreMore/>
-        <Footer/>
+        {/* <Footer/> */}
       </div>
     );
   }
