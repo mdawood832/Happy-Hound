@@ -1,5 +1,8 @@
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
+import { Link } from "react-router-dom";
+import Products from '../pages/Products';
+
 
 function Landing() {
   return (
@@ -11,9 +14,11 @@ function Landing() {
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
+                        
                         <a href="/" className='shopButtonTag'>
                             <button className='shopButton'>Shop Now</button>
                         </a>
+                        
                     </div>
             </div>
         </header>
