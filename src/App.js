@@ -1,25 +1,65 @@
+import React, { Component } from 'react'
 import './App.css';
-import Nav from './components/Nav'
-import Landing from './components/Landing';
-
-//add baseURL outside of APP
-let baseURL = ''
-
-if(process.env.NODE_ENV === 'developement') {  //NODE_ENV specifically is used to state whether a particular environment is a production or a development environment
-  baseURL = 'http://localhost:3003'
-} else {
-  baseURL = 'your heroku bakend url here'
-}
-console.log('current base URL:', baseURL)
+// import Nav from './components/Nav'
+// import Landing from './components/Landing';
 
 
-function App() {
-  return (
-    <div className="App">
-      <Nav/>
-      <Landing/>
-    </div>
-  );
-}
+	// newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
+	let baseURL = process.env.REACT_APP_BACKEND_URL
+  // console.log('current base URL:', baseURL)
 
-export default App;
+  
+  class App extends Component {
+    constructor(props) {
+      super(props)
+      this.state = {
+        products: []
+      }
+    }
+
+    componentDidMount(){
+      this.getProducts()
+    }
+    
+
+    getProducts = () => {
+      fetch(baseURL + '/products')
+       .then((res) => {
+        if (res.status === 200) {
+         return res.json();
+        } else {
+         return [];
+        }
+       })
+       .then((data) => {
+        console.log(data);
+        this.setState({ products: data.products });
+       });
+     }
+
+
+    render () {
+      return (
+        <div className='container'>
+         <h1>Products</h1>
+         <table>
+         <tbody>
+    { this.state.products.map(product => {
+        return (
+          <tr key={product._id} >
+            <td> {product.name}</td>
+          </tr>
+          
+        )
+      })
+    }
+    
+  </tbody>
+  </table>
+        </div>
+      )
+    }
+   }
+  
+  
+  export default App;
