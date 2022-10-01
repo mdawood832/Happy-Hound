@@ -6,8 +6,7 @@ class Register extends Component {
 		super(props);
 
 		this.state = {
-			fullname: '',
-			email: '',
+			username: '',
 			password: ''
 		};
 
@@ -29,8 +28,7 @@ class Register extends Component {
 		console.log('You have successfully registered');
 		console.log(this.state);
 		this.setState({
-			fullname: '',
-			email: '',
+			username: '',
 			password: ''
 		});
 	}
@@ -41,22 +39,15 @@ class Register extends Component {
 				<form onSubmit={this.displayLogin}>
 					<h2>Register</h2>
 
-					<div className="name">
-						<input
-							type="text"
-							placeholder="Full Name"
-							name="fullname"
-							value={this.state.fullname}
-							onChange={this.update}
-						/>
-					</div>
+					
+					
 
-					<div className="email">
+					<div className="username">
 						<input
 							type="text"
-							placeholder="Enter your email"
-							name="email"
-							value={this.state.email}
+							placeholder="Enter your username"
+							name="username"
+							value={this.state.username}
 							onChange={this.update}
 						/>
 					</div>

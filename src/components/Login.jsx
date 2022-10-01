@@ -6,7 +6,7 @@ class Login extends Component {
 		super(props);
 
 		this.state = {
-			email: '',
+			username: '',
 			password: ''
 		};
 
@@ -28,7 +28,7 @@ class Login extends Component {
 		console.log('You are logged in');
 		console.log(this.state);
 		this.setState({
-			email: '',
+			username: '',
 			password: ''
 		});
 	}
@@ -42,9 +42,9 @@ class Login extends Component {
 						<input
 							type="text"
 							placeholder="Username..."
-							value={this.state.email}
+							value={this.state.username}
 							onChange={this.update}
-							name="email"
+							name="username"
 						/>
 					</div>
 
