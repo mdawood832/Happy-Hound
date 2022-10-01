@@ -1,41 +1,5 @@
-<<<<<<< HEAD
-import React from 'react'
-import '../css/Products.css'
-// IMPORT PRODUCTS FROM DATABASE 
-
-const Products = () => {
-  return (
-    <div id="productsBody">
-        <main id= "productsMain">
-            <section>
-                <div className="productsContainer">
-                    <div className="row">
-                        <div className="productsHeader">
-                            <h2 className="sectionTitle">Dog Accessories</h2>
-                            <select id="filter" defaultValue='default'>
-                                <option value="default" >Sort</option>
-                                <option value="lowToHigh">Price, Low to High</option>
-                                <option value="highToLow">Price, High to Low</option>
-                            </select>
-                        </div>
-                        <div className='products'>
-                            {/* {products.map((products)=> ( */}
-                                {/* // <Features products = {products} key = {products.id} /> */}
-                                {/* // YOU NEED TO MAKE SURE THIS IS CORRECT AND MATCHES WITH EVERYTHING */}
-                             {/* ))} */}
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-    </div>
-  )
-}
-
-export default Products
-=======
 import React, { Component } from 'react'
-// import './App.css';
+import '../css/Products.css'
 
 // newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
 let baseURL = process.env.REACT_APP_BACKEND_URL
@@ -74,6 +38,26 @@ class Products extends Component {
   render () {
     return (
       <div className='container'>
+        {/* <div id="productsBody">
+        <main id= "productsMain">
+            <section>
+                <div className="productsContainer">
+                    <div className="row">
+                        <div className="productsHeader">
+                            <h2 className="sectionTitle">Dog Accessories</h2>
+                            <select id="filter" defaultValue='default'>
+                                <option value="default" >Sort</option>
+                                <option value="lowToHigh">Price, Low to High</option>
+                                <option value="highToLow">Price, High to Low</option>
+                            </select>
+                        </div>
+                        <div className='products'>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        </div> */}
        <h1>Products</h1>
        <table>
        <tbody>
@@ -96,4 +80,3 @@ class Products extends Component {
 
 
 export default Products;
->>>>>>> origin/combined-branch
