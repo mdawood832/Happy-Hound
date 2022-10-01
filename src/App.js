@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import './App.css';
 // import Nav from './components/Nav'
 // import Landing from './components/Landing';
 import Products from './pages/Products';
+import ProductDetail from './pages/ProductDetail';
+import CreateProduct from './pages/ProductCreate';
 
 
 function App() {
@@ -11,6 +13,9 @@ function App() {
       {/* <Nav/>
       <Landing/> */}
       <Products />
+      
+      
+
     </div>
   );
 }

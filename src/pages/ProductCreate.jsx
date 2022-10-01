@@ -25,7 +25,13 @@ class CreateProduct extends React.Component {
         e.preventDefault()
         fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
             method: 'POST',
-            body: JSON.stringify({[e.target.id]: e.target.value}),
+            body: JSON.stringify({
+                name: this.state.name, 
+                imgURL: this.state.imgURL,
+                description: this.state.description,
+                type: this.state.type,
+                price: this.state.price
+            }),
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -39,7 +45,13 @@ class CreateProduct extends React.Component {
         .then(resJson => {
             console.log('New Product Form - resJson', resJson)
             this.props.handleAddProduct(resJson)
-            this.setState({[e.target.id]: ''})
+            this.setState({ 
+                name: '',
+                imgURL: '',
+                description: '',
+                type: '',
+                price: ''
+            })
         })
         .catch((err) => {console.log(err)})
     }
