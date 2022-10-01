@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, {Component} from 'react'
 import './css/App.css'
 import Home from '../src/pages/Home'
@@ -72,3 +73,22 @@ class App extends Component {
 
 
 export default App;
+=======
+import React, { Component } from 'react'
+import './App.css';
+import Nav from './components/Nav'
+import Landing from './components/Landing';
+
+
+function App() {
+  return (
+    <div className="App">
+      <Nav/>
+      <Landing/>
+      
+    </div>
+  );
+}
+
+export default App;
+>>>>>>> origin/combined-branch

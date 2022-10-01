@@ -2,6 +2,9 @@ import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
 import Featured from './Featured'
 import ShopNow from './ui/ShopNow'
+import { Link } from "react-router-dom";
+import Products from '../pages/Products';
+
 
 const Landing = () => {
   return (
@@ -17,6 +20,13 @@ const Landing = () => {
                             <button className='shopButton'>Shop Now</button>
                         </a> */}
                         <ShopNow/>
+                </div>
+
+                <div>
+                        <a href="/" className='shopButtonTag'>
+                            <button className='shopButton'>Shop Now</button>
+                        </a>
+                        
                 </div>
             </div>
         </header>
