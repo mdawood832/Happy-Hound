@@ -43,7 +43,7 @@ class Products extends Component {
 	};
 
   handleEditProduct = (product) => {
-    fetch(`${process.env.REACT_APP_BACKEND_URL}/products/product._id`, {
+    fetch(baseURL + '/products/' + product._id, {
         method: 'PUT',
         body: JSON.stringify({
             name: product.name, 
@@ -85,22 +85,24 @@ class Products extends Component {
 		return (
 			<div className='App'>
 				<h1>Products</h1>
-				<CreateProduct handleAddProduct={this.handleAddProduct} />
+        
+				<CreateProduct  handleAddProduct={this.handleAddProduct} />
+        <ProductEdit handleEditProduct={this.handleEditProduct} />
+
 				<table>
 					<tbody>
 						{this.state.products.map((product) => {
 							return (
+                
 								<tr key={product._id}>
 									<td> <img src={product.imgURL}/> </td>
 									<td>{product.name}</td>
-									<td
-										onClick={() => {
-											this.handleEditProduct(product) }}>
-										
-									</td>
+									
 									<td onClick={() => this.handleDeleteProduct(product._id)}>Delete Product</td>
 								</tr>
+                
 							);
+              
 						})}
 					</tbody>
 				</table>

@@ -16,12 +16,12 @@ class ProductEdit extends React.Component {
     handleChange = (e) => {
         this.setState({
             //grabs all details
-            [e.target.id]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
 
     // call this when the user submits the form
-    handleSubmit = (product) => {
+    handleEditProduct = (product) => {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/products/product._id`, {
             method: 'PUT',
             body: JSON.stringify({
@@ -37,7 +37,7 @@ class ProductEdit extends React.Component {
         })
         .then((res) => res.json())
         .then((resJson) => {
-            // console.log(resJson)
+            console.log(resJson)
             const copyProducts = [...this.state.products];
             const findIndex = this.state.products.findIndex(
                 (product) => product._id === resJson._id
@@ -53,7 +53,7 @@ class ProductEdit extends React.Component {
         return (
             <>
             <h1>Edit Product</h1>
-            <form onSubmit={this.handleSubmit} className='EditForm' >
+            <form onSubmit={this.handleEditProduct} className='EditForm' >
                 <input 
                     id='name'
                     type='text' 

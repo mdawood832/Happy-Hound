@@ -63,6 +63,7 @@ class CreateProduct extends React.Component {
             <form onSubmit={this.handleSubmit} className='newProductForm' >
                 <input 
                     id='name'
+                    key=''
                     type='text' 
                     onChange={this.handleChange}
                     value={this.state.name}
