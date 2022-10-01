@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 class ProductDetail extends Component {
   render() {
     return (
@@ -15,3 +16,4 @@ class ProductDetail extends Component {
 }
 
 export default ProductDetail
+

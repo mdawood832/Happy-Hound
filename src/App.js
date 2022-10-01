@@ -5,6 +5,7 @@ import './App.css';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import CreateProduct from './pages/ProductCreate';
+import ProductEdit from './pages/ProductEdit';
 
 
 function App() {
