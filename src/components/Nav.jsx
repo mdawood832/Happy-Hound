@@ -21,7 +21,7 @@ const Nav = () => {
 
                     <li className='navList'>
                         <a href="/" className='navLink'>
-                            Shop
+                            Create A Product
                         </a>
                     </li>
 

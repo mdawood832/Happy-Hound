@@ -4,11 +4,15 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core'
+<<<<<<< HEAD
+import { faShoppingCart , faStar} from '@fortawesome/free-solid-svg-icons'
+=======
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter as Router } from "react-router-dom";
+>>>>>>> origin/combined-branch
 
 
-library.add(faShoppingCart)
+library.add(faShoppingCart , faStar)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

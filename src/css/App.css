@@ -7,12 +7,17 @@
   list-style: none;
   display: flex;
   align-items:center;
+  /* width: 1600px; */
+  padding-bottom: 20px;
 }
 
 .navList{
   padding: 12px;
 }
 
+.navLink{
+  color: black;
+}
 
 .navContainer {
   width: 100%;
@@ -27,18 +32,21 @@
 
 .logo{
   width: 250px;
-  position: absolute;
+  /* position: absolute;
   left:0;
-  top:0;
+  top:0; */
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
+
 }
 
 /* LANDING COMPONENT  */
 
 .landingPagePhoto{
-  height: 400px;
+  margin-top: 40px;
+  height: 420px;
   width: 1050px;
   border-radius: 24px;
 }
@@ -80,5 +88,56 @@
   font-size: 20px;
 
 }
+
+/* FEATURED */
+
+#features{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+
+.featuredSectionTitle{
+  padding-top: 320px;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.dogAccessories{
+  display: flex;
+  justify-content: center;
+  width: 1050px;
+}
+
+.dogAccesorieImage{
+  padding-top: 30px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+.dogAccesorie{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.dogAccesorieTitleLink{
+  color: black;
+  font-size: 20px;
+}
+
+
 
 
