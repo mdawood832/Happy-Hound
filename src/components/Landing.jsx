@@ -18,12 +18,6 @@ function Landing() {
                          
                         <Link to='/products'><button className='shopButton'> Shop Now</button></Link>
 
-                        <Routes>
-                            <Route path="/products" element={<Products />} />
-                            <Route path="/products/product" element={<CreateProduct />} />
-                        </Routes>
-                       
-                       
                           
                     </div>
             </div>
