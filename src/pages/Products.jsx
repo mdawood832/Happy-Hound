@@ -4,7 +4,7 @@ import React, { Component } from "react";
  import CreateProduct from './ProductCreate'
 import ProductDetail from "./ProductDetail";
 import ProductEdit from './ProductEdit'
-import { Link } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom'; 
 
 // newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
 let baseURL = process.env.REACT_APP_BACKEND_URL;
@@ -32,7 +32,7 @@ class Products extends Component {
         }
       })
       .then((data) => {
-				// console.log('data', data);
+				console.log('data', data);
 				// just a quick fix for this to work (data returns undefined...)
 				if (data === []) {
 					this.setState({ products: data})
@@ -112,6 +112,7 @@ class Products extends Component {
               
 						})}
 					
+
 
 			</div>
 		);

@@ -12,13 +12,13 @@ import { Route, Routes, Link } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      <Nav/>
+      {/* <Nav/> */}
       {/* <Landing/> */}
-      <Routes>
-        <Route path="*" element={<Landing />} />
+      {/* <Routes>
+        <Route path="/" element={<Landing />} />
         <Route path="/products" element={<Products />} />
-      </Routes>
-      {/* <Products /> */}
+      </Routes> */}
+      <Products />
       
             
       
