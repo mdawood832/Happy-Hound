@@ -86,15 +86,15 @@ class Products extends Component {
 			<div className='App'>
 				<h1>Products</h1>
         
-				<CreateProduct  handleAddProduct={this.handleAddProduct} />
-        <ProductEdit handleEditProduct={this.handleEditProduct} />
+				<CreateProduct handleAddProduct={this.handleAddProduct} />
+        
 
 				<table>
 					<tbody>
-						{this.state.products.map((product) => {
+						{this.state.products.map((product, index) => {
 							return (
                 
-								<tr key={product._id}>
+								<tr key={index}>
 									<td> <img src={product.imgURL}/> </td>
 									<td>{product.name}</td>
 									
@@ -106,6 +106,7 @@ class Products extends Component {
 						})}
 					</tbody>
 				</table>
+
 			</div>
 		);
 	}

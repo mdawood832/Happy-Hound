@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductDetail from './ProductDetail'
 
 class CreateProduct extends React.Component {
     constructor(props){
@@ -12,18 +13,18 @@ class CreateProduct extends React.Component {
         }
     }
 
-    // call this function on every keystroke
+    // call this function on every keystroke in the form
     handleChange = (e) => {
         this.setState({
-            //grabs all details
+            //grabs all details as an object-dynamically
             [e.target.id]: e.target.value
         })
     }
 
     // call this when the user submits the form
     handleSubmit = (e) => {
-        e.preventDefault()
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {
+        e.preventDefault() //prevent page from refreshing
+        fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {  //this returns a promise(an object)
             method: 'POST',
             body: JSON.stringify({
                 name: this.state.name, 
@@ -36,13 +37,13 @@ class CreateProduct extends React.Component {
                 'Content-Type': 'application/json'
             }
         })
-        .then(res => {
-            if(res.ok) {
+        .then(res => {  //this returns a promise(an object)
+            if(res.ok) {  
                 return res.json()
             }
             throw new Error(res)
         })
-        .then(resJson => {
+        .then(resJson => {  //this returns a promise(an object)
             console.log('New Product Form - resJson', resJson)
             this.props.handleAddProduct(resJson)
             this.setState({ 
@@ -63,7 +64,6 @@ class CreateProduct extends React.Component {
             <form onSubmit={this.handleSubmit} className='newProductForm' >
                 <input 
                     id='name'
-                    key=''
                     type='text' 
                     onChange={this.handleChange}
                     value={this.state.name}
@@ -105,6 +105,10 @@ class CreateProduct extends React.Component {
                 
                 <input type="submit" value="Add a New Product" />
             </form>
+            {/* {(this.state.product)
+            ? <ProductDetail product={this.state.product} />
+            : ''
+            } */}
             </>
         )
     }

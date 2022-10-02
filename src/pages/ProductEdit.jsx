@@ -15,8 +15,8 @@ class ProductEdit extends React.Component {
     // call this function on every keystroke
     handleChange = (e) => {
         this.setState({
-            //grabs all details
-            [e.target.name]: e.target.value
+            //grabs all details dynamically in this.state using e.target
+            [e.target.id]: e.target.value
         })
     }
 
