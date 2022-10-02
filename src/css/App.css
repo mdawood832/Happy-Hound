@@ -22,6 +22,8 @@
 .navContainer {
   width: 100%;
   max-width: 1200px;
+  /* height: 310px; */
+  height: 180px;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
