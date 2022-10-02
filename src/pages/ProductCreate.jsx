@@ -13,6 +13,8 @@ class CreateProduct extends React.Component {
         }
     }
 
+   
+
     // call this function on every keystroke in the form
     handleChange = (e) => {
         this.setState({
@@ -23,7 +25,7 @@ class CreateProduct extends React.Component {
 
     // call this when the user submits the form
     handleSubmit = (e) => {
-        e.preventDefault() //prevent page from refreshing
+        // e.preventDefault() //prevent page from refreshing
         fetch(`${process.env.REACT_APP_BACKEND_URL}/products`, {  //this returns a promise(an object)
             method: 'POST',
             body: JSON.stringify({
