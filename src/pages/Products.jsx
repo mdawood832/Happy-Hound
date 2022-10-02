@@ -92,7 +92,7 @@ class Products extends Component {
 			<div className='App'>
 				<h1>Products</h1>
         
-				<CreateProduct handleAddProduct={this.handleAddProduct} />
+				
         
 
 				
@@ -111,8 +111,9 @@ class Products extends Component {
 							);
               
 						})}
-					
+           
 
+            <CreateProduct handleAddProduct={this.handleAddProduct} />
 
 			</div>
 		);
