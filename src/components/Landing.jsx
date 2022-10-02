@@ -2,6 +2,7 @@ import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
 import { Route, Routes, Link } from 'react-router-dom'; 
 import Products from '../pages/Products';
+import CreateProduct from '../pages/ProductCreate';
 
 
 function Landing() {
@@ -17,9 +18,10 @@ function Landing() {
                          
                         <Link to='/products'><button className='shopButton'> Shop Now</button></Link>
 
-                        {/* <Routes>
+                        <Routes>
                             <Route path="/products" element={<Products />} />
-                        </Routes> */}
+                            <Route path="/products/product" element={<CreateProduct />} />
+                        </Routes>
                        
                        
                           
