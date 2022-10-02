@@ -1,5 +1,6 @@
 import React from 'react'
 import ProductDetail from './ProductDetail'
+import Products from './Products'
 
 class CreateProduct extends React.Component {
     constructor(props){
@@ -111,6 +112,8 @@ class CreateProduct extends React.Component {
             ? <ProductDetail product={this.state.product} />
             : ''
             } */}
+
+           
             </>
         )
     }

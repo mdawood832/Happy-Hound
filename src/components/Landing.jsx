@@ -1,8 +1,7 @@
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
-import { Route, Routes, Link } from 'react-router-dom'; 
-import Products from '../pages/Products';
-import CreateProduct from '../pages/ProductCreate';
+import { Link } from 'react-router-dom'; 
+
 
 
 function Landing() {
