@@ -6,14 +6,14 @@ const Features = ({products}) => {
   return (
     <div className='dogAccesorie'>
 
-        <a href="">
+        <a href="/productDetails">
             <figure className='dogAccesorieWrapper'>
                 <img className='dogAccesorieImage' src={products.imgURL} alt="" />
             </figure>
         </a>
 
         <div className='dogAccesorieTitle'>
-            <a href="/" className='dogAccesorieTitleLink'>
+            <a href="/productDetails" className='dogAccesorieTitleLink'>
                 {products.name}
             </a>
         </div>

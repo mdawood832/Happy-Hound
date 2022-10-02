@@ -46,11 +46,11 @@ class Products extends Component {
                     <div className="row">
                         <div className="productsHeader">
                             <h2 className="sectionTitle">Dog Accessories</h2>
-                            <select id="filter" defaultValue='default'>
+                            {/* <select id="filter" defaultValue='default'>
                                 <option value="default" >Sort</option>
                                 <option value="lowToHigh">Price, Low to High</option>
                                 <option value="highToLow">Price, High to Low</option>
-                            </select>
+                            </select> */}
                         </div>
                         <div className='products'>
                           {
@@ -58,27 +58,13 @@ class Products extends Component {
                               <Features products={products} key={products._id}/>
                             ))
                           }
-                        {/* { this.state.products.map(product => {
-                          return (
-                              <tr key={product._id}>
-                              <img src={product.imgURL}/>
-                              </tr>
-                            )
-                          })
-                        } */}
                         </div>
                     </div>
                 </div>
             </section>
         </main>
       </div>
-    <table>
-      <tbody>
-
-      </tbody>
-    </table>
-
-      </div>
+    </div>
     )
   }
  }
