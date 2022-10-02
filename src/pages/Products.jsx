@@ -4,6 +4,7 @@ import React, { Component } from "react";
  import CreateProduct from './ProductCreate'
 import ProductDetail from "./ProductDetail";
 import ProductEdit from './ProductEdit'
+import { Link } from 'react-router-dom';
 
 // newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
 let baseURL = process.env.REACT_APP_BACKEND_URL;
@@ -31,10 +32,15 @@ class Products extends Component {
         }
       })
       .then((data) => {
-        console.log(data);
-        this.setState({ products: data.products });
-      });
-  };
+				// console.log('data', data);
+				// just a quick fix for this to work (data returns undefined...)
+				if (data === []) {
+					this.setState({ products: data})
+				} else {
+					this.setState({ products: data.products });
+				}
+			});
+	};
 
   handleAddProduct = (product) => {
 		const copyProducts = [...this.state.products];
@@ -89,23 +95,23 @@ class Products extends Component {
 				<CreateProduct handleAddProduct={this.handleAddProduct} />
         
 
-				<table>
-					<tbody>
+				
 						{this.state.products.map((product, index) => {
 							return (
                 
-								<tr key={index}>
-									<td> <img src={product.imgURL}/> </td>
-									<td>{product.name}</td>
+								<div key={index}>
+								 <img src={product.imgURL}/> 
+									{product.name}
 									
-									<td onClick={() => this.handleDeleteProduct(product._id)}>Delete Product</td>
-								</tr>
+									<button onClick={() => this.handleDeleteProduct(product._id)}>Delete Product</button>
+								
+                  
+                </div>
                 
 							);
               
 						})}
-					</tbody>
-				</table>
+					
 
 			</div>
 		);

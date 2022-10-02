@@ -29,7 +29,7 @@ class ProductEdit extends React.Component {
                 imgURL: product.imgURL,
                 description: product.description,
                 type: product.type,
-                price: product.price
+                price: product.price 
             }),
             headers: {
                 'Content-Type': 'application/json'

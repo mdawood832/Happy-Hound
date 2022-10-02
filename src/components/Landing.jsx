@@ -1,6 +1,6 @@
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
-import { Link } from "react-router-dom";
+import { Route, Routes, Link } from 'react-router-dom'; 
 import Products from '../pages/Products';
 
 
@@ -14,11 +14,15 @@ function Landing() {
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
-                        
-                        <a href="/" className='shopButtonTag'>
-                            <button className='shopButton'>Shop Now</button>
-                        </a>
-                        
+                         
+                        <Link to='/products'><button className='shopButton'> Shop Now</button></Link>
+
+                        <Routes>
+                            <Route path="/products" element={<Products />} />
+                        </Routes>
+                       
+                       
+                          
                     </div>
             </div>
         </header>
