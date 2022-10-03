@@ -16,16 +16,13 @@ const Landing = () => {
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
-                        {/* <a href="/" className='shopButtonTag'>
-                            <button className='shopButton'>Shop Now</button>
-                        </a> */}
                         <ShopNow/>
                 </div>
 
                 <div>
-                        <a href="/" className='shopButtonTag'>
+                        <Link to="/" className='shopButtonTag'>
                             <button className='shopButton'>Shop Now</button>
-                        </a>
+                        </Link>
                         
                 </div>
             </div>

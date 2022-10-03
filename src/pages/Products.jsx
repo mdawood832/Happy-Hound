@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import '../css/Products.css'
 import Features from '../components/ui/Features'
+import ProductDetail from '../pages/ProductDetail'
 
 // newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
 let baseURL = process.env.REACT_APP_BACKEND_URL
@@ -56,6 +57,12 @@ class Products extends Component {
                           {
                             this.state.products.map((products) => (
                               <Features products={products} key={products._id}/>
+                            ))
+                          }
+
+                          {
+                            this.state.products.map((products) => (
+                              <ProductDetail products={products} key={products._id}/>
                             ))
                           }
                         </div>

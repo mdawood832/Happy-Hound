@@ -6,12 +6,12 @@ import Nav from './components/Nav';
 import Footer from './components/Footer'
 import reportWebVitals from './reportWebVitals';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingCart , faStar} from '@fortawesome/free-solid-svg-icons'
+import { faShoppingCart , faStar, faArrowLeft} from '@fortawesome/free-solid-svg-icons'
 import { BrowserRouter as Router } from "react-router-dom";
 
 
 
-library.add(faShoppingCart , faStar)
+library.add(faShoppingCart , faStar, faArrowLeft)
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

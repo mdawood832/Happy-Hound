@@ -1,21 +1,23 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
+import ProductDetail from '../../pages/ProductDetail'
 
 
 const Features = ({products}) => {
   return (
     <div className='dogAccesorie'>
 
-        <a href="/productDetails">
+        <Link to="/productDetail">
             <figure className='dogAccesorieWrapper'>
                 <img className='dogAccesorieImage' src={products.imgURL} alt="" />
             </figure>
-        </a>
+        </Link>
 
         <div className='dogAccesorieTitle'>
-            <a href="/productDetails" className='dogAccesorieTitleLink'>
+            <Link to="/productDetail" className='dogAccesorieTitleLink'>
                 {products.name}
-            </a>
+            </Link>
         </div>
 
         <div className='dogAccesorieRatings'>
