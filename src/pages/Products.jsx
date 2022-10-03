@@ -98,16 +98,24 @@ class Products extends Component {
 				
 						{this.state.products.map((product, index) => {
 							return (
-                
-								<div key={index}>
+                <div className='container'>
+        <div id="productsBody">
+        <main id= "productsMain">
+                <section> 
+                <div className="productsContainer">
+                <h2 className="sectionTitle">Dog Accessories</h2>
+								<div className='products' key={index}>
 								 <img src={product.imgURL}/> 
 									{product.name}
 									
 									<button onClick={() => this.handleDeleteProduct(product._id)}>Delete Product</button>
 								
-                  
+                  </div> 
                 </div>
-                
+                </section> 
+                </main>
+      </div>
+    </div>
 							);
               
 						})}
