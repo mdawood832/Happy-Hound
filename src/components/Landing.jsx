@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
 
@@ -9,8 +11,9 @@ import Products from '../pages/Products';
 
 const Landing = () => {
   return (
-    <section id='landing'>
-        <header>
+    
+    
+    <div>
             <div className="headerContainer">
                 <div className="headerDescription">
                     <img className='landingPagePhoto' src={LandingPagePhoto} alt="" />
@@ -29,8 +32,9 @@ const Landing = () => {
                     </div>
 
             </div>
-        </header>
-    </section>
+     
+ 
+    
   )
 }
 
