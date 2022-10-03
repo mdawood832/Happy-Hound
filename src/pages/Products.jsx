@@ -1,10 +1,15 @@
+
+import '../css/Products.css'
+import Features from '../components/ui/Features'
+
+
 import React, { Component } from "react";
-// import './App.css';
-// import ProductDetail from './ProductDetail'
+
  import CreateProduct from './ProductCreate'
-import ProductDetail from "./ProductDetail";
+import ProductDetail from './ProductDetail';
 import ProductEdit from './ProductEdit'
 import { Route, Routes, Link } from 'react-router-dom'; 
+
 
 // newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
 let baseURL = process.env.REACT_APP_BACKEND_URL;
@@ -23,6 +28,10 @@ class Products extends Component {
   }
 
   getProducts = () => {
+
+
+
+
     fetch(baseURL + "/products")
       .then((res) => {
         if (res.status === 200) {
@@ -87,7 +96,8 @@ class Products extends Component {
     })
   }
 
-  render() {
+
+ render() {
 		return (
 			<div className='App'>
 				<h1>Products</h1>
@@ -127,5 +137,3 @@ class Products extends Component {
 		);
 	}
 }
-
-export default Products;

@@ -1,3 +1,9 @@
+
+import './css/App.css'
+
+
+
+import ProductDetail from './pages/ProductDetail'
 import React from 'react'
 import './App.css';
 import Nav from './components/Nav'
@@ -7,8 +13,10 @@ import Products from './pages/Products';
 import { Route, Routes } from 'react-router-dom'; 
 
 
+
 function App() {
   return (
+
     <div className="App">
     
       <Nav /> 
@@ -18,6 +26,7 @@ function App() {
         <Route path= '/' element={<Nav />} /> 
         <Route path='/products' element={<Products />} />
         {/* <Route path='/products/create' element={<CreateProduct />} /> */}
+         <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
       </Routes>
     
       
@@ -25,6 +34,7 @@ function App() {
       
 
     </div>
+
   );
 }
 
