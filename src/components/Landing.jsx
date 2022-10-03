@@ -1,10 +1,13 @@
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
-import { Link } from 'react-router-dom'; 
+
+import Featured from './Featured'
+import ShopNow from './ui/ShopNow'
+import { Link } from "react-router-dom";
+import Products from '../pages/Products';
 
 
-
-function Landing() {
+const Landing = () => {
   return (
     <section id='landing'>
         <header>
@@ -14,11 +17,17 @@ function Landing() {
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
+
+                       
+                </div>
+
+
                          
-                        <Link to='/products'><button className='shopButton'> Shop Now</button></Link>
+                        <Link to='/products'><button className='shopButtonTag'> Shop Now</button></Link>
 
                           
                     </div>
+
             </div>
         </header>
     </section>
