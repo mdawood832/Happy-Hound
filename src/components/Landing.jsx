@@ -20,16 +20,11 @@ const Landing = () => {
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
-
-                       
                 </div>
-
-
-                         
-                        <Link to='/products'><button className='shopButtonTag'> Shop Now</button></Link>
-
-                          
-                    </div>
+                       
+                <div>
+                        <Link to='/products'><button className='shopButtonTag'> Shop Now</button></Link> 
+                </div>
 
             </div>
      
