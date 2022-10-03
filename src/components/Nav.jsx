@@ -1,14 +1,19 @@
 import React from 'react'
 import HappyHoundLogo from '../assets/hh (1).png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {Link} from 'react-router-dom'
+
+import { Link } from 'react-router-dom'; 
+
 
 const Nav = () => {
     return(
         <nav>
             <div className='navContainer'>
                 <div className='Logo'>
-                <Link to="">
+
+
+                <Link to="/">
+
                     <img className='logo' src={HappyHoundLogo} alt="" />
                 </Link>
                 </div>

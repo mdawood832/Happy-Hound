@@ -1,3 +1,4 @@
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
@@ -66,3 +67,4 @@ class ProductDetail extends Component{
 }
 
 export default ProductDetail
+
