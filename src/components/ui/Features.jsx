@@ -7,15 +7,15 @@ import ProductDetail from '../../pages/ProductDetail'
 const Features = ({products}) => {
   return (
     <div className='dogAccesorie'>
-
-        <Link to="/productDetail">
+        {/* <ProductDetail products={products} key={products._id} */}
+        <Link to={'/productDetail' + products._id}>
             <figure className='dogAccesorieWrapper'>
                 <img className='dogAccesorieImage' src={products.imgURL} alt="" />
             </figure>
         </Link>
 
         <div className='dogAccesorieTitle'>
-            <Link to="/productDetail" className='dogAccesorieTitleLink'>
+            <Link to={"/productDetail" + products._id} className='dogAccesorieTitleLink'>
                 {products.name}
             </Link>
         </div>
