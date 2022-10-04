@@ -9,6 +9,7 @@ import Products from './pages/Products';
 import Footer from './components/Footer'
 // import CreateProduct from './pages/ProductCreate';
 import { Route, Routes } from 'react-router-dom'; 
+import Footer from './components/Footer';
 
 
 
@@ -25,7 +26,13 @@ function App() {
         {/* <Route path='/products/create' element={<CreateProduct />} /> */}
          <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
       </Routes>
-      <Footer/>
+      
+
+      {/* <Footer /> */}
+    
+      
+            
+      
 
     </div>
 
