@@ -23,19 +23,15 @@ class ProductDetail extends Component{
 
                         <div className='product'>
                             <figure className='productFigure'>
-                                <img src="https://i.imgur.com/QKJdE6n.jpg" alt="" />
+                                <img src={this.props.product.imgURL} alt={this.props.product.name}/>
                             </figure>  
 
                             <div className='productTitle'>
-                                <h2>
-                                SlowTon Hands-Free Padded & Adjustable Sling Dog Carrier
-                                </h2>
+                                <h1>Name: {this.props.product.name} </h1>
                             </div> 
 
                             <div className='productPrice'>
-                                <h2>
-                                25.99
-                                </h2>
+                                <h3>Price: {this.props.product.price} </h3>
                             </div>
 
                             <div className='productStars'>
@@ -47,9 +43,7 @@ class ProductDetail extends Component{
                             </div>
 
                             <div className='productDescription'>
-                                <p>
-                                This carrier sling is fully adjustable to any height and features a thick padded strap to help prevent shoulder aches.
-                                </p>
+                                <h2>Description: {this.props.product.description} </h2>
                             </div>
 
                             <button className='addToCart'>
