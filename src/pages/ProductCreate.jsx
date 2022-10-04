@@ -13,6 +13,7 @@ class CreateProduct extends React.Component {
             type: '',
             price: ''
         }
+        
     }
 
    
@@ -57,11 +58,13 @@ class CreateProduct extends React.Component {
                 type: '',
                 price: ''
             })
+
         })
         .catch((err) => {console.log(err)})
     }
 
     render() {
+     
         return (
             <>
             <h1>New Product</h1>
