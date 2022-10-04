@@ -22,16 +22,24 @@ class Login extends Component {
 			[name]: value
 		});
 	}
+	// Register method 
+	// fetch to the backend route users/signup
+	// console log what returns from the server
+
 
 	displayLogin(e) {
 		e.preventDefault();
 		console.log('You are logged in');
+		window.location.href = '/';
 		console.log(this.state);
 		this.setState({
 			username: '',
 
 			password: ''
-		});
+		})
+		// take data from form and call register 
+		// console log what returns from the server
+
 	}
 
 	render() {
@@ -59,7 +67,9 @@ class Login extends Component {
 						/>
 					</div>
 
-					<input type="submit" value="Login" />
+					<div className="button">
+						<button type="submit">Login</button>
+					</div>
 				</form>
 
 				<Link to="/register">Create an account</Link>

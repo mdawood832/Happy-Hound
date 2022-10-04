@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
+
 
 class Register extends Component {
     constructor(props) {
@@ -33,46 +33,50 @@ class Register extends Component {
 		});
 	}
 
-    render() {
-        return (
+	render() {
+		return (
 			<div className="register">
 				<form onSubmit={this.displayLogin}>
 					<h2>Register</h2>
-
-					
-					
-
 					<div className="username">
 						<input
 							type="text"
-							placeholder="Enter your username"
-							name="username"
+							placeholder="Username..."
 							value={this.state.username}
 							onChange={this.update}
+							name="username"
 						/>
 					</div>
 
 					<div className="password">
 						<input
 							type="password"
-							placeholder="Password"
-							name="password"
+							placeholder="Password..."
 							value={this.state.password}
 							onChange={this.update}
+							name="password"
 						/>
 					</div>
 
-					<div className="password">
-						<input type="password" placeholder="Confirm Password" name="password1" />
+					<div className="submit">
+						<input type="submit" value="Register" />
 					</div>
-
-					<input type="submit" value="Login" />
 				</form>
-
-				<Link to="/">Login Here</Link>
 			</div>
 		);
 	}
+	
 }
 
 export default Register;
+
+
+
+
+
+
+
+
+	
+		
+		
