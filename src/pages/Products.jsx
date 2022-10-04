@@ -127,9 +127,5 @@ class Products extends Component {
     );
   }
 }
-<<<<<<< HEAD
-export default Products;
-=======
 
 export default Products
->>>>>>> 213bfa9d0ed3f19d86749a0220275883dce27441
