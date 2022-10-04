@@ -1,14 +1,12 @@
 
 import './css/App.css'
-
-
-
 import ProductDetail from './pages/ProductDetail'
 import React from 'react'
 // import './App.css';
 import Nav from './components/Nav'
 import Landing from './components/Landing';
 import Products from './pages/Products';
+import Footer from './components/Footer'
 // import CreateProduct from './pages/ProductCreate';
 import { Route, Routes } from 'react-router-dom'; 
 
@@ -20,7 +18,6 @@ function App() {
     <div className="App">
     
       <Nav /> 
-   
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path= '/' element={<Nav />} /> 
@@ -28,10 +25,7 @@ function App() {
         {/* <Route path='/products/create' element={<CreateProduct />} /> */}
          <Route path='/ProductDetail/:id' element={<ProductDetail/>}/>
       </Routes>
-    
-      
-            
-      
+      <Footer/>
 
     </div>
 
