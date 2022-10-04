@@ -50,33 +50,33 @@ class Products extends Component {
     this.setState({ products: copyProducts });
   };
 
-  //   handleEditProduct = (product) => {
-  //     fetch(baseURL + '/products/' + product._id, {
-  //         method: 'PUT',
-  //         body: JSON.stringify({
-  //             name: product.name,
-  //             imgURL: product.imgURL,
-  //             description: product.description,
-  //             type: product.type,
-  //             price: product.price
-  //         }),
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //         }
-  //     })
-  //     .then((res) => res.json())
-  //     .then((resJson) => {
-  //         // console.log(resJson)
-  //         const copyProducts = [...this.state.products];
-  //         const findIndex = this.state.products.findIndex(
-  //             (product) => product._id === resJson._id
-  //         );
-  //         copyProducts[findIndex] = resJson
-  //         this.setState({
-  //             products: copyProducts,
-  //         });
-  //     });
-  // };
+    handleEditProduct = (product) => {
+      fetch(baseURL + '/products/' + product._id, {
+          method: 'PUT',
+          body: JSON.stringify({
+              name: product.name,
+              imgURL: product.imgURL,
+              description: product.description,
+              type: product.type,
+              price: product.price
+          }),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      })
+      .then((res) => res.json())
+      .then((resJson) => {
+          // console.log(resJson)
+          const copyProducts = [...this.state.products];
+          const findIndex = this.state.products.findIndex(
+              (product) => product._id === resJson._id
+          );
+          copyProducts[findIndex] = resJson
+          this.setState({
+              products: copyProducts,
+          });
+      });
+  };
 
   handleDeleteProduct = (id) => {
     fetch(baseURL + "/products/" + id, {
@@ -122,7 +122,8 @@ class Products extends Component {
           );
         })}
 
-        <CreateProduct handleAddProduct={this.handleAddProduct} />
+        {/* <CreateProduct handleAddProduct={this.handleAddProduct} /> */}
+        {/* <ProductEdit handleEditProduct={this.handleEditProduct} /> */}
       </div>
     );
   }

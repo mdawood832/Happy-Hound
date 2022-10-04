@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 class ProductEdit extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            name: '',
-            imgURL: '',
-            description: '',
-            type: '',
-            price: ''
+            name: this.props.name,
+            imgURL: this.props.imgURL,
+            description: this.props.description,
+            type: this.props.type,
+            price: this.props.price
         }
     }
 
@@ -95,7 +96,7 @@ class ProductEdit extends React.Component {
                     className='editProductInput'
                 />
                 
-                <input type="submit" value="Edit Product" />
+               <input type="submit" value="Edit Product" />
             </form>
             </>
         )
