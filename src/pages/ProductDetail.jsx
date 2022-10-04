@@ -23,15 +23,15 @@ class ProductDetail extends Component{
 
                         <div className='product'>
                             <figure className='productFigure'>
-                                {/* <img src={this.props.product.imgURL} alt={this.props.product.name}/> */}
+                                <img src={this.props.product.imgURL} alt={this.props.product.name}/>
                             </figure>  
 
                             <div className='productTitle'>
-                                <h1>Name: {this.props.name} </h1>
+                                <h1>Name: {this.props.product.name} </h1>
                             </div> 
 
                             <div className='productPrice'>
-                                <h3>Price: {this.props.price} </h3>
+                                <h3>Price: {this.props.product.price} </h3>
                             </div>
 
                             <div className='productStars'>
@@ -43,7 +43,7 @@ class ProductDetail extends Component{
                             </div>
 
                             <div className='productDescription'>
-                                <h2>Description: {this.props.description} </h2>
+                                <h2>Description: {this.props.product.description} </h2>
                             </div>
 
                             <button className='addToCart'>

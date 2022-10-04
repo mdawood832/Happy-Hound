@@ -5,7 +5,7 @@ class ProductEdit extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            name: this.props.name,
+            name: this.props.name,      //originally had this as empty string but changed to prop to pass to current value???
             imgURL: this.props.imgURL,
             description: this.props.description,
             type: this.props.type,
@@ -25,7 +25,7 @@ class ProductEdit extends React.Component {
     handleEditProduct = (product) => {
         fetch(`${process.env.REACT_APP_BACKEND_URL}/products/product._id`, {
             method: 'PUT',
-            body: JSON.stringify({
+            body: JSON.stringify({   //should i save() here or change to ???
                 name: product.name, 
                 imgURL: product.imgURL,
                 description: product.description,
