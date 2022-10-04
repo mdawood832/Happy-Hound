@@ -1,4 +1,3 @@
-
 import './css/App.css'
 import ProductDetail from './pages/ProductDetail'
 import React from 'react'
@@ -9,7 +8,7 @@ import Products from './pages/Products';
 import Footer from './components/Footer'
 // import CreateProduct from './pages/ProductCreate';
 import { Route, Routes } from 'react-router-dom'; 
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
 
 
 
@@ -30,9 +29,6 @@ function App() {
 
       {/* <Footer /> */}
     
-      
-            
-      
 
     </div>
 

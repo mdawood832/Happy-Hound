@@ -1,5 +1,3 @@
-
-
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
 
@@ -11,8 +9,6 @@ import Products from '../pages/Products';
 
 const Landing = () => {
   return (
-    
-    
     <div>
             <div className="headerContainer">
                 <div className="headerDescription">
@@ -27,8 +23,8 @@ const Landing = () => {
                 </div>
 
             </div>
-     
- 
+    </div>
+
     
   )
 }
