@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+let baseURL = 'http://localhost:3003';
 
 class Register extends Component {
 
@@ -15,10 +15,12 @@ class Register extends Component {
 	registerUser = (e) => {
 		e.preventDefault();
 		const { username, password } = this.state;
-		const { history } = this.props;
-		const user = { username, password };
-		console.log('user', user);
-		fetch('http://localhost:3000/users/register', {
+		const { history } = this.props; // the history object that will be used to store the login history
+		const user = { username, password }; //  user object that will be used to login the user
+		console.log('user', user); //  log the user object to the console
+
+	// fetch the register route from the backend server and pass the user object
+		fetch(`${baseURL}/users/register`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -26,19 +28,18 @@ class Register extends Component {
 			body: JSON.stringify(user)
 		})
 			.then((res) => res.json())
-			.then(resJson => {
-				console.log('resJson', resJson);
-				if (resJson.status === 200) {
-					localStorage.setItem('token', resJson.token);
-					history.push('/');
-				} else {
-					alert('Error registering user');
+			.then((data) => {
+				console.log('data', data);
+				if (data.status === 200) {
+					localStorage.setItem('token', data.token); // save token to local storage
+					history.push('/');  // redirect to the home page after successful registration 
 				}
 			})
 			.catch((err) => {
 				console.log('err', err);
 			});
 	}
+
 
 	handleChange = (e) => {
 		if (e.target.name === 'username') {
