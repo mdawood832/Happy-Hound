@@ -12,10 +12,11 @@ class Login extends Component {
 
 	loginUser = (e) => {
 		e.preventDefault();
-		const { username, password } = this.state;
-		const { history } = this.props;
-		const user = { username, password };
-		console.log('user', user);
+		const { username, password } = this.state; //  setting username and password to the state object 
+		const { history } = this.props; // the history object that will be used to store the login history
+		// history.push(`/login?username=${username}&password=${password}`);
+		const user = { username, password }; //  user object that will be used to login the user 
+		console.log(user);
 		fetch('http://localhost:3000/users/login', {
 			method: 'POST',
 			headers: {
@@ -29,7 +30,7 @@ class Login extends Component {
 				if (data.status === 200) {
 					localStorage.setItem('token', data.token); // save token to local storage
 					history.push('/'); // redirect to home page
-					alert('Invalid username or password');
+					
 				}
 			})
 			.catch((err) => {
