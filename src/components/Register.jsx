@@ -3,7 +3,7 @@ import React, { Component } from "react";
 let baseURL = "http://localhost:3003";
 class Register extends Component {
   constructor(props) {
-    super(props);
+    super(props); // super is a reference to the parent class (Component) 
     this.state = {
       username: "",
       password: "",
@@ -12,28 +12,29 @@ class Register extends Component {
 
   handleChange = (e) => {
     if (e.target.name === "username") {
-      this.setState({ username: e.target.value });
+      this.setState({ username: e.target.value }); //  set the state of the username property to the value of the input field
     }
     if (e.target.name === "password") {
-      this.setState({ password: e.target.value });
+      this.setState({ password: e.target.value }); //  set the state of the password property to the value of the input field
     }
   };
 
   registerUser = (e) => {
     e.preventDefault();
-    const { username, password } = this.state;
+    const { username, password } = this.state; //  destructure the username and password properties from the state object
     const user = { username, password };
     console.log("user", user);
     fetch(`${baseURL}/users/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+		"Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
       },
       body: JSON.stringify(user),
     })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log("data", data);
+      .then((res) => res.json()) // parse the response as JSON data and return it to the next .then()
+      .then((data) => { // data is the parsed JSON data
+        console.log("data", data); // log the data object to the console
         if (data.status === 200) {
           localStorage.setItem("token", data.token);
         }
