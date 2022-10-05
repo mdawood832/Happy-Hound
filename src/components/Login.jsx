@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+let baseURL = 'http://localhost:3003';
 
 class Login extends Component {
-	constructor(props) {
-		super(props);
+	constructor(props) { //
+		super(props); //  
 		this.state = {
 			username: '',
 			password: ''
@@ -17,7 +18,7 @@ class Login extends Component {
 		// history.push(`/login?username=${username}&password=${password}`);
 		const user = { username, password }; //  user object that will be used to login the user 
 		console.log(user);
-		fetch('http://localhost:3000/users/login', {
+		fetch(`${baseURL}/users/login`, {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -39,11 +40,11 @@ class Login extends Component {
 	}
 
 	handleChange = (e) => {
-		if (e.target.name === 'username') {
-			this.setState({ username: e.target.value });
+		if (e.target.name === 'username') {  
+			this.setState({ username: e.target.value }); //  setting the username to the value of the input field
 		}
 		if (e.target.name === 'password') {
-			this.setState({ password: e.target.value });
+			this.setState({ password: e.target.value }); //  setting the password to the value of the input field
 		}
 
 	}
