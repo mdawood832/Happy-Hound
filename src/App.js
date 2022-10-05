@@ -110,7 +110,7 @@ class App extends Component {
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
         <Route path='/edit/:id' element={ <ProductEdit />}/>
         <Route path='/create' element={<CreateProduct />} />
-        <Route path='/detail/:id' element={<ProductDetail product={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
+        <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       
      
