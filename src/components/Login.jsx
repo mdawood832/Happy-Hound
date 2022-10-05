@@ -16,7 +16,7 @@ class Login extends Component {
 		const { history } = this.props;
 		const user = { username, password };
 		console.log('user', user);
-		fetch('http://localhost:3000/users/signin', {
+		fetch('http://localhost:3000/users/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json'
@@ -27,9 +27,8 @@ class Login extends Component {
 			.then((data) => {
 				console.log('data', data);
 				if (data.status === 200) {
-					localStorage.setItem('token', data.token);
-					history.push('/dashboard');
-				} else {
+					localStorage.setItem('token', data.token); // save token to local storage
+					history.push('/'); // redirect to home page
 					alert('Invalid username or password');
 				}
 			})

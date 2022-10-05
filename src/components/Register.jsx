@@ -3,23 +3,21 @@ import React, { Component } from 'react';
 
 class Register extends Component {
     constructor(props) {
-		super(props);
+		super(props); //  super() is used to call the constructor of the parent class
 
-		this.state = {
-			username: '',
-			password: ''
+		this.state = { //  state is a property of the component class
+			username: '', //  username is a property of the state object
+			password: '' //  password is a property of the state object
 		};
 
-		this.update = this.update.bind(this);
+		
+		this.update = this.update.bind(this); //  bind the update method to the component
+		this.displayLogin = this.displayLogin.bind(this); //  bind() is used to bind the function to the component class
+	} 
 
-		this.displayLogin = this.displayLogin.bind(this);
-	}
-
-	update(e) {
-		let name = e.target.name;
-		let value = e.target.value;
-		this.setState({
-			[name]: value
+	update(e) { //  update method is used to update the state of the component
+		this.setState({ //  setState() is used to update the state of the component
+			[e.target.name]: e.target.value //  update the state of the component
 		});
 	}
 
