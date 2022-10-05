@@ -1,21 +1,25 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {Link} from 'react-router-dom'
+import ProductDetail from '../../pages/ProductDetail'
+import { useParams} from 'react-router-dom'
 
-
-const Features = ({Products}) => {
+const Features = ({products}) => {
+    const {id} = useParams()
   return (
     <div className='dogAccesorie'>
-
-        <a href="">
+        {/* <ProductDetail products={products} key={products._id} */}
+        <Link to={'/products/:id'}>
             <figure className='dogAccesorieWrapper'>
-                <img className='dogAccesorieImage' src={Products.image} alt="" />
+                <img className='dogAccesorieImage' src={products.imgURL} alt="" />
             </figure>
-        </a>
+        </Link>
 
         <div className='dogAccesorieTitle'>
-            <a href="/" className='dogAccesorieTitleLink'>
-                {Products.name}
-            </a>
+            <Link to={"/products/:id"} className='dogAccesorieTitleLink'>
+                {products.name}
+                {products.id}
+            </Link>
         </div>
 
         <div className='dogAccesorieRatings'>
@@ -27,7 +31,7 @@ const Features = ({Products}) => {
         </div>
 
         <div className='dogAcesoriePrices'>
-            <span className="dogPrice">{Products.price}</span>
+            <span className="dogPrice">{products.price}</span>
         </div>
 
     </div>

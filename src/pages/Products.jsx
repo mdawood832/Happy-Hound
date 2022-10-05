@@ -1,97 +1,53 @@
-// import React from 'react'
-// import '../css/Products.css'
-// // IMPORT PRODUCTS FROM DATABASE 
+import "../css/Products.css";
+import Features from "../components/ui/Features";
 
-// const Products = () => {
-//   return (
-//     <div id="productsBody">
-//         <main id= "productsMain">
-//             <section>
-//                 <div className="productsContainer">
-//                     <div className="row">
-//                         <div className="productsHeader">
-//                             <h2 className="sectionTitle">Dog Accessories</h2>
-//                             <select id="filter" defaultValue='default'>
-//                                 <option value="default" >Sort</option>
-//                                 <option value="lowToHigh">Price, Low to High</option>
-//                                 <option value="highToLow">Price, High to Low</option>
-//                             </select>
-//                         </div>
-//                         <div className='products'>
-//                             {/* {products.map((products)=> ( */}
-//                                 {/* // <Features products = {products} key = {products.id} /> */}
-//                                 {/* // YOU NEED TO MAKE SURE THIS IS CORRECT AND MATCHES WITH EVERYTHING */}
-//                              {/* ))} */}
-//                         </div>
-//                     </div>
-//                 </div>
-//             </section>
-//         </main>
-//     </div>
-//   )
-// }
+import React, { Component } from "react";
 
-// export default Products
+import CreateProduct from "./ProductCreate";
+import ProductDetail from "./ProductDetail";
+import ProductEdit from "./ProductEdit";
+import { Route, Routes, Link } from "react-router-dom";
 
-import React, { Component } from 'react'
-import '../css/Products.css'
-
-// newer version of "create-react-app" you cant force process.env.NODE_ENV so we will just hard code this
-let baseURL = process.env.REACT_APP_BACKEND_URL
-// console.log('current base URL:', baseURL)
 
 
 class Products extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      products: []
-    }
+     products: []
+    };
   }
 
-  componentDidMount(){
-    this.getProducts()
-  }
-  
-
-  getProducts = () => {
-    fetch(baseURL + '/products')
-     .then((res) => {
-      if (res.status === 200) {
-       return res.json();
-      } else {
-       return [];
-      }
-     })
-     .then((data) => {
-      console.log(data);
-      this.setState({ products: data.products });
-     });
-   }
-
-
-  render () {
+  render() {
+    console.log(this.props)
     return (
-      <div className='container'>
-       <h1>Products</h1>
-       <table>
-       <tbody>
-  { this.state.products.map(product => {
-      return (
-        <tr key={product._id} >
-          <img src={product.imgURL}/>
-        </tr>
-        
-      )
-    })
-  }
-  
-</tbody>
-</table>
+      <div className="App">
+        <h1>Products</h1>
+        {this.props.products.map((product) => {
+          return (
+               <div className="productsContainer" key={product._id}>
+                      <Link to="/edit/:id">
+                        <h2 className="sectionTitle">{product.name}</h2>
+                      </Link>
+
+                      <Link to={'/detail/'+ product._id}>
+                        <img src={product.imgURL} />
+                      </Link>
+
+                        {/* <button
+                          onClick={() => this.handleDeleteProduct(product._id)}
+                        >
+                          Delete Product
+                        </button> */}
+                </div>
+          );
+        })}
+
+        {/* <CreateProduct handleAddProduct={this.handleAddProduct} /> */}
+        {/* <ProductEdit handleEditProduct={this.handleEditProduct} /> */}
       </div>
-    )
+    );
   }
- }
+}
 
-
-export default Products;
+export default Products

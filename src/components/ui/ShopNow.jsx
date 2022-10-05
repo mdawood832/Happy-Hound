@@ -1,10 +1,11 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
 const ShopNow = () => {
   return (
-    <a href="/" className='shopButtonTag'>
+    <Link to="/products" className='shopButtonTag'>
         <button className='shopButton'>Shop Now</button>
-    </a>
+    </Link>
   )
 }
 
