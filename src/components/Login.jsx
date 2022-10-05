@@ -4,78 +4,87 @@ import { Link } from 'react-router-dom';
 class Login extends Component {
 	constructor(props) {
 		super(props);
-
 		this.state = {
 			username: '',
 			password: ''
 		};
-
-		this.update = this.update.bind(this);
-
-		this.displayLogin = this.displayLogin.bind(this);
 	}
 
-	update(e) {
-		let name = e.target.name;
-		let value = e.target.value;
-		this.setState({
-			[name]: value
-		});
-	}
-	// Register method 
-	// fetch to the backend route users/signup
-	// console log what returns from the server
-
-
-	displayLogin(e) {
+	loginUser = (e) => {
 		e.preventDefault();
-		console.log('You are logged in');
-		window.location.href = '/';
-		console.log(this.state);
-		this.setState({
-			username: '',
-
-			password: ''
+		const { username, password } = this.state;
+		const { history } = this.props;
+		const user = { username, password };
+		console.log('user', user);
+		fetch('http://localhost:3000/users/signin', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(user)
 		})
-		// take data from form and call register 
-		// console log what returns from the server
+			.then((res) => res.json())
+			.then((data) => {
+				console.log('data', data);
+				if (data.status === 200) {
+					localStorage.setItem('token', data.token);
+					history.push('/dashboard');
+				} else {
+					alert('Invalid username or password');
+				}
+			})
+			.catch((err) => {
+				console.log('err', err);
+			});
+	}
+
+	handleChange = (e) => {
+		if (e.target.name === 'username') {
+			this.setState({ username: e.target.value });
+		}
+		if (e.target.name === 'password') {
+			this.setState({ password: e.target.value });
+		}
 
 	}
 
 	render() {
+
+
 		return (
-			<div className="login">
-				<form onSubmit={this.displayLogin}>
-					<h2>Login</h2>
-					<div className="username">
-						<input
-							type="text"
-							placeholder="Username..."
-							value={this.state.username}
-							onChange={this.update}
-							name="username"
-						/>
-					</div>
+			 <div className="container"> 
+			 	 <div className="row">
+			 	 	<div className="col-md-4 col-md-offset-4">
+			 	 		<div className="panel panel-default">
+			 	 			<div className="panel-heading">
+						<h3 className="panel-title">Login</h3>
 
-					<div className="password">
-						<input
-							type="password"
-							placeholder="Password..."
-							value={this.state.password}
-							onChange={this.update}
-							name="password"
-						/>
+						<div className="panel-tools">	
+							<Link to="/register" className="btn btn-primary">Sign Up</Link>
+							
+												
+						</div>
 					</div>
-
-					<div className="button">
-						<button type="submit">Login</button>
+					<div className="panel-body">
+						<form onSubmit={this.loginUser}>	
+							<div className="form-group">
+								<label htmlFor="username">Username</label>
+								<input type="text" className="form-control" name="username" onChange={this.handleChange} />
+							</div>
+							<div className="form-group"> 
+								<label htmlFor="password">Password</label>
+								<input type="password" className="form-control" name="password" onChange={this.handleChange} />
+							</div>
+							<button type="submit" className="btn btn-primary">Login</button>
+						</form>
 					</div>
-				</form>
-
-				<Link to="/register">Create an account</Link>
+				</div>
 			</div>
+		</div>
+	</div>
 		);
-	}
+
+}
 }
 
 export default Login;

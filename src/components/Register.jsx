@@ -32,51 +32,38 @@ class Register extends Component {
 			password: ''
 		});
 	}
+		render() {
 
-	render() {
+
 		return (
-			<div className="register">
-				<form onSubmit={this.displayLogin}>
-					<h2>Register</h2>
-					<div className="username">
-						<input
-							type="text"
-							placeholder="Username..."
-							value={this.state.username}
-							onChange={this.update}
-							name="username"
-						/>
+			 <div className="container"> 
+			 	 <div className="row">
+			 	 	<div className="col-md-4 col-md-offset-4">
+			 	 		<div className="panel panel-default">
+			 	 			<div className="panel-heading">
+						<h3 className="panel-title">Register</h3>
 					</div>
-
-					<div className="password">
-						<input
-							type="password"
-							placeholder="Password..."
-							value={this.state.password}
-							onChange={this.update}
-							name="password"
-						/>
+					<div className="panel-body">
+						<form onSubmit={this.displayLogin}>
+							<div className="form-group">
+								<label htmlFor="username">Username</label>
+								<input type="text" className="form-control" name="username" value={this.state.username} onChange={this.update} />
+							</div>
+							<div className="form-group">
+								<label htmlFor="password">Password</label>
+								<input type="password" className="form-control" name="password" value={this.state.password} onChange={this.update} />
+							</div>
+							<button type="submit" className="btn btn-success">Register</button>
+						</form>
 					</div>
-
-					<div className="submit">
-						<input type="submit" value="Register" />
-					</div>
-				</form>
+				</div>
 			</div>
+		</div>
+	</div>
 		);
 	}
-	
 }
 
 export default Register;
-
-
-
-
-
-
-
-
-	
 		
 		
