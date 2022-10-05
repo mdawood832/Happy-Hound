@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
+
+
+
 let baseURL = "http://localhost:3003";
+
 
 class Login extends Component {
   // creates a class component called Login
@@ -48,9 +52,7 @@ class Login extends Component {
         console.log("err", err);
       });
   };
-  
 
- 
   render() {
     return (
       <div className="container">
@@ -61,9 +63,7 @@ class Login extends Component {
                 <h3 className="panel-title">Login</h3>
 
                 <div className="panel-tools">
-                  <Link to="/register" className="btn btn-primary">
-                    Sign Up
-                  </Link>
+                  <Link to="/register" className="btn btn-link">Register</Link>
                 </div>
               </div>
               <div className="panel-body">
@@ -98,5 +98,7 @@ class Login extends Component {
     );
   }
 }
+ 
+ export default Login; 
 
-export default Login;
+  
