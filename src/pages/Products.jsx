@@ -4,7 +4,6 @@ import React, { Component } from "react";
 import { Route, Routes, Link } from "react-router-dom";
 
 
-
 class Products extends Component {
   constructor(props) {
     super(props);
@@ -22,7 +21,7 @@ class Products extends Component {
         
         {this.props.products.map((product, index) => {
           return (
-               <div className="productsContainer" key={index}>
+              <div className="productsContainer" key={index}>
                       <Link to="/edit/:id">
                         <h2 className="sectionTitle">{product.name}</h2>
                       </Link>
@@ -30,14 +29,7 @@ class Products extends Component {
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />
                       </Link>
-                        <button
-                          onClick={() => this.props.handleDeleteProduct(product._id)}
-                        >
-                          Delete Product
-                        </button> 
-
-
-                </div>
+              </div>
           );
         })}
 
