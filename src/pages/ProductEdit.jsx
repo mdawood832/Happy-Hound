@@ -1,15 +1,17 @@
-import React from 'react'
+
+import { faSave } from '@fortawesome/free-regular-svg-icons';
+import React, {Component} from 'react'
 import { Link } from "react-router-dom";
 
-class ProductEdit extends React.Component {
+class ProductEdit extends Component {
     constructor(props){
         super(props)
-        this.state = {
-            name: this.props.name,      //originally had this as empty string but changed to prop to pass to current value???
-            imgURL: this.props.imgURL,
-            description: this.props.description,
-            type: this.props.type,
-            price: this.props.price
+        this.state = {     
+            name: '', //originally had this as empty string but changed to prop to pass to current value???
+            imgURL: '',
+            description: '',
+            type: '',
+            price: ''
         }
     }
 
@@ -21,45 +23,22 @@ class ProductEdit extends React.Component {
         })
     }
 
-    // call this when the user submits the form
-    handleEditProduct = (product) => {
-        fetch(`${process.env.REACT_APP_BACKEND_URL}/products/product._id`, {
-            method: 'PUT',
-            body: JSON.stringify({   //should i save() here or change to ???
-                name: product.name, 
-                imgURL: product.imgURL,
-                description: product.description,
-                type: product.type,
-                price: product.price 
-            }),
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then((res) => res.json())
-        .then((resJson) => {
-            console.log(resJson)
-            const copyProducts = [...this.state.products];
-            const findIndex = this.state.products.findIndex(
-                (product) => product._id === resJson._id
-            );
-            copyProducts[findIndex] = resJson
-            this.setState({
-                products: copyProducts,
-            });
-        });
-};
+
 
     render() {
         return (
             <>
             <h1>Edit Product</h1>
-            <form onSubmit={this.handleEditProduct} className='EditForm' >
+
+            <form onSubmit={this.props.handleEditProduct} className='EditForm' >
+
                 <input 
                     id='name'
                     type='text' 
                     onChange={this.handleChange}
-                    value={this.state.name}
+
+                    value={this.props.name}
+
                     placeholder='Edit Product Name'
                     className='editProductInput'
                 />
@@ -67,7 +46,9 @@ class ProductEdit extends React.Component {
                     id='imgURL'
                     type='text' 
                     onChange={this.handleChange}
-                    value={this.state.imgURL}
+
+                    value={this.props.imgURL}
+
                     placeholder='edit image'
                     className='editProductInput'
                 />
@@ -75,7 +56,9 @@ class ProductEdit extends React.Component {
                     id='description'
                     type='text' 
                     onChange={this.handleChange}
-                    value={this.state.description}
+
+                    value={this.props.description}
+
                     placeholder='edit description'
                     className='editProductInput'
                 />
@@ -83,7 +66,9 @@ class ProductEdit extends React.Component {
                     id='type'
                     type='text' 
                     onChange={this.handleChange}
-                    value={this.state.type}
+
+                    value={this.props.type}
+
                     placeholder=' edit type'
                     className='editProductInput'
                 />
@@ -91,7 +76,9 @@ class ProductEdit extends React.Component {
                     id='price'
                     type='text' 
                     onChange={this.handleChange}
-                    value={this.state.price}
+
+                    value={this.props.price}
+
                     placeholder='edit price'
                     className='editProductInput'
                 />

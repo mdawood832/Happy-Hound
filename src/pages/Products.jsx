@@ -1,11 +1,6 @@
 import "../css/Products.css";
 import Features from "../components/ui/Features";
-
 import React, { Component } from "react";
-
-import CreateProduct from "./ProductCreate";
-import ProductDetail from "./ProductDetail";
-import ProductEdit from "./ProductEdit";
 import { Route, Routes, Link } from "react-router-dom";
 
 
@@ -18,14 +13,16 @@ class Products extends Component {
     };
   }
 
+
   render() {
     console.log(this.props)
     return (
       <div className="App">
         <h1>Products</h1>
-        {this.props.products.map((product) => {
+        
+        {this.props.products.map((product, index) => {
           return (
-               <div className="productsContainer" key={product._id}>
+               <div className="productsContainer" key={index}>
                       <Link to="/edit/:id">
                         <h2 className="sectionTitle">{product.name}</h2>
                       </Link>
@@ -33,18 +30,19 @@ class Products extends Component {
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />
                       </Link>
-
-                        {/* <button
-                          onClick={() => this.handleDeleteProduct(product._id)}
+                        <button
+                          onClick={() => this.props.handleDeleteProduct(product._id)}
                         >
                           Delete Product
-                        </button> */}
+                        </button> 
+
+
                 </div>
           );
         })}
 
-        {/* <CreateProduct handleAddProduct={this.handleAddProduct} /> */}
-        {/* <ProductEdit handleEditProduct={this.handleEditProduct} /> */}
+
+
       </div>
     );
   }
