@@ -53,11 +53,20 @@ function ProductDetail({products, handleDeleteProduct}){
 
                                 <br/>
                                 <br/>
+                                
+                                <Link to='/edit/:id'>
+                                    <button className='editProduct'>
+                                        Edit Product 
+                                    </button>
+                                </Link>
+
+                                <br/>
+                                <br/>
 
                                 <Link to='/products'>
-                                <button onClick={() => handleDeleteProduct(product._id)}>
-                                    Delete Product
-                                </button> 
+                                    <button onClick={() => handleDeleteProduct(product._id)}>
+                                        Delete Product
+                                    </button> 
                                 </Link>
 
                             </div>
