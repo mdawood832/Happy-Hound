@@ -1,3 +1,4 @@
+
 import { faSave } from '@fortawesome/free-regular-svg-icons';
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
@@ -23,16 +24,21 @@ class ProductEdit extends Component {
     }
 
 
+
     render() {
         return (
             <>
             <h1>Edit Product</h1>
+
             <form onSubmit={this.props.handleEditProduct} className='EditForm' >
+
                 <input 
                     id='name'
                     type='text' 
                     onChange={this.handleChange}
+
                     value={this.props.name}
+
                     placeholder='Edit Product Name'
                     className='editProductInput'
                 />
@@ -40,7 +46,9 @@ class ProductEdit extends Component {
                     id='imgURL'
                     type='text' 
                     onChange={this.handleChange}
+
                     value={this.props.imgURL}
+
                     placeholder='edit image'
                     className='editProductInput'
                 />
@@ -48,7 +56,9 @@ class ProductEdit extends Component {
                     id='description'
                     type='text' 
                     onChange={this.handleChange}
+
                     value={this.props.description}
+
                     placeholder='edit description'
                     className='editProductInput'
                 />
@@ -56,7 +66,9 @@ class ProductEdit extends Component {
                     id='type'
                     type='text' 
                     onChange={this.handleChange}
+
                     value={this.props.type}
+
                     placeholder=' edit type'
                     className='editProductInput'
                 />
@@ -64,7 +76,9 @@ class ProductEdit extends Component {
                     id='price'
                     type='text' 
                     onChange={this.handleChange}
+
                     value={this.props.price}
+
                     placeholder='edit price'
                     className='editProductInput'
                 />

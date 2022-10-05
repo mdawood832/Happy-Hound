@@ -107,6 +107,7 @@ class App extends Component {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path= '/' element={<Nav />} /> 
+
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
         <Route path='/edit/:id' element={ <ProductEdit />}/>
         <Route path='/create' element={<CreateProduct />} />

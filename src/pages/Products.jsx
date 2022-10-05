@@ -14,41 +14,35 @@ class Products extends Component {
   }
 
 
-
-
   render() {
     console.log(this.props)
     return (
       <div className="App">
         <h1>Products</h1>
-
+        
         {this.props.products.map((product, index) => {
           return (
-            <div className="container">
-              <div id="productsBody">
-                <main id="productsMain">
-                  <section>
-                    <div className="productsContainer">
-                      <Link to="/edit/:id"><h2 className="sectionTitle">{product.name}</h2> </Link>
-                      <div className="products" key={index}>
-                        <Link to="/detail/:id"><img src={product.imgURL} /></Link>
-                        
+               <div className="productsContainer" key={index}>
+                      <Link to="/edit/:id">
+                        <h2 className="sectionTitle">{product.name}</h2>
+                      </Link>
 
-                         <button
+                      <Link to={'/detail/'+ product._id}>
+                        <img src={product.imgURL} />
+                      </Link>
+                        <button
                           onClick={() => this.props.handleDeleteProduct(product._id)}
                         >
                           Delete Product
                         </button> 
-                      </div>
-                    </div>
-                  </section>
-                </main>
-              </div>
-            </div>
+
+
+                </div>
           );
         })}
 
-       
+
+
       </div>
     );
   }
