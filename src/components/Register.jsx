@@ -26,11 +26,13 @@ class Register extends Component {
 			body: JSON.stringify(user)
 		})
 			.then((res) => res.json())
-			.then((data) => {
-				console.log('data', data);
-				if (data.status === 200) {
-					localStorage.setItem('token', data.token); // save token to local storage
-					history.push('/'); // redirect to home page
+			.then(resJson => {
+				console.log('resJson', resJson);
+				if (resJson.status === 200) {
+					localStorage.setItem('token', resJson.token);
+					history.push('/');
+				} else {
+					alert('Error registering user');
 				}
 			})
 			.catch((err) => {
