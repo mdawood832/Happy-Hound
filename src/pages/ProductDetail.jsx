@@ -7,6 +7,7 @@ import Features from '../components/ui/Features'
 
 
 class ProductDetail extends Component{
+    
     render () {
   return (
     <div className='productBody'>

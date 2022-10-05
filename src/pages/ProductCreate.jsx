@@ -1,6 +1,5 @@
 import React from 'react'
-import ProductDetail from './ProductDetail'
-import Products from './Products'
+
 import { Link } from "react-router-dom";
 
 class CreateProduct extends React.Component {

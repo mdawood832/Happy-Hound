@@ -6,7 +6,7 @@ import LandingPagePhoto from '../assets/landingPagePhoto.png'
 import Featured from './Featured'
 import ShopNow from './ui/ShopNow'
 import { Link } from "react-router-dom";
-import Products from '../pages/Products';
+
 
 
 const Landing = () => {
