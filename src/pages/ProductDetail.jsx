@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { Link , useParams} from 'react-router-dom'
 import Features from '../components/ui/Features'
 
-function ProductDetail({products}){
+function ProductDetail({products, handleDeleteProduct}){
     const { id } = useParams()
     const product = products.find(product => product._id === id)
 
@@ -50,6 +50,16 @@ function ProductDetail({products}){
                                 <button className='addToCart'>
                                     Add to Cart
                                 </button>
+
+                                <br/>
+                                <br/>
+
+                                <Link to='/products'>
+                                <button onClick={() => handleDeleteProduct(product._id)}>
+                                    Delete Product
+                                </button> 
+                                </Link>
+
                             </div>
      
                         </div>

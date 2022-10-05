@@ -30,11 +30,11 @@ class Products extends Component {
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />
                       </Link>
-                        <button
+                        {/* <button
                           onClick={() => this.props.handleDeleteProduct(product._id)}
                         >
                           Delete Product
-                        </button> 
+                        </button>  */}
 
 
                 </div>
