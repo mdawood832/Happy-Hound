@@ -2,16 +2,18 @@
 import './css/App.css'
 import ProductDetail from './pages/ProductDetail'
 import React, {Component} from 'react'
-// import './App.css';
+ import './css/App.css'
 import Nav from './components/Nav'
 import Landing from './components/Landing';
 import Products from './pages/Products';
 import { Route, Routes } from 'react-router-dom'; 
-import Footer from './components/Footer';
+//import Footer from './components/Footer';
 import ProductEdit from './pages/ProductEdit';
 import CreateProduct from './pages/ProductCreate';
 import Cart from './pages/Cart'
 import ExploreMore from './components/ExploreMore'
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 
 
@@ -106,6 +108,8 @@ class App extends Component {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path= '/' element={<Nav />} /> 
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
         <Route path='/edit/:id' element={ <ProductEdit />}/>
         <Route path='/create' element={<CreateProduct />} />

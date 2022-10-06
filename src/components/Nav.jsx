@@ -1,58 +1,63 @@
-import React from 'react'
-import HappyHoundLogo from '../assets/hh (1).png'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import { Link } from 'react-router-dom'; 
-
+import React from "react";
+import { Link } from "react-router-dom";
+import HappyHoundLogo from "../assets/hh (1).png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = () => {
-    return(
-        <nav>
-            <div className='navContainer'>
-                <div className='Logo'>
 
 
-                <Link to="/">
+  return (
+    <nav>
+      <div className="navContainer">
+        <div className="Logo">
+          <Link to="/">
+            <img className="logo" src={HappyHoundLogo} alt="" />
+          </Link>
+        </div>
 
-                    <img className='logo' src={HappyHoundLogo} alt="" />
+        <ul className="navLinks">
+          <li className="navList">
+            <Link to="/" className="navLink">
+              Home
+            </Link>
+          </li>
+
+          <li className="navList">
+            <Link to="/create" className="navLink">
+              Create A Product
+            </Link>
+          </li>
+
+          <li className="navList">
+            <Link to="/products" className="navLink">
+              Products
+            </Link>
+          </li>
+          
+          
+          <li className='navList'>
+                <Link to="/cart" className='navLink'>
+                <FontAwesomeIcon icon="cart-shopping" />
                 </Link>
-                </div>
+                <span className='cart__length'>2</span>
+         </li>
 
-                <ul className='navLinks'>
-                    <li className='navList'>
-                        <Link to="/" className='navLink'>
-                            Home
-                        </Link>
-                    </li>
 
-                    <li className='navList'>
-                        <Link to="/create" className='navLink'>
-                            Create A Product
-                        </Link>
-                    </li>
 
-                    <li className='navList'>
-                        <Link to="/products" className='navLink'>
-                            Products
-                        </Link>
-                    </li>
-
-                    <li className='navList'>
-                        <Link to="/cart" className='navLink'>
-                        <FontAwesomeIcon icon="cart-shopping" />
-                        </Link>
-                        <span className='cart__length'>2</span>
-                    </li>
-
-                    <li className='navList'>
-                        <Link to="/" className='navLink'>
-                            Sign In/Sign Out
-                        </Link>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    )
-}
+          <li className="navList">
+            <Link to="/login" className="navLink">
+              Sign In
+            </Link>
+          </li>
+          <li className="navList">
+            <Link to="/register" className="navLink">
+              Sign Up
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
 export default Nav;

@@ -5,7 +5,6 @@ import { Route, Routes, Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
-
 class Products extends Component {
   constructor(props) {
     super(props);
@@ -23,6 +22,7 @@ class Products extends Component {
         {this.props.products.map((product, index) => {
           return (
               <div className="productsContainer" key={index}>
+
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />
                       </Link>
@@ -41,6 +41,7 @@ class Products extends Component {
                                       <FontAwesomeIcon icon='star'/>
                         </div>
                       </div>
+
               </div>
           );
         })}
