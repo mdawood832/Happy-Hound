@@ -4,8 +4,9 @@ footer{
     justify-content: center;
     padding: 3% 0 ;
     position: relative;
-    bottom: 0;
+    /* bottom: 0; */
     width: 100%;
+    margin-top:200px;
 }
 
 
@@ -19,6 +20,7 @@ footer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px;
 }
 
 .row {
@@ -29,7 +31,7 @@ footer{
 
 .footerCopyright{
     color: white;
-    font-size: 20px;
+    font-size: px;
     display: flex;
     justify-content: center;
 }

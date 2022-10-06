@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/ProductCreate.css'
 
 import { Link } from "react-router-dom";
 
@@ -66,7 +67,8 @@ class CreateProduct extends React.Component {
      
         return (
             <>
-            <h1>New Product</h1>
+            <h1 className='createProductTitle'>New Product</h1>
+            <div className='createContainer'>
             <form onSubmit={this.handleSubmit} className='newProductForm' >
                 <input 
                     id='name'
@@ -109,11 +111,9 @@ class CreateProduct extends React.Component {
                     className='newProductInput'
                 />
                 
-                <input type="submit" value="Add a New Product" />
+                <input className='submitFormButton' type="submit" value="Add a New Product" />
             </form>
-         
-
-           
+            </div>
             </>
         )
     }

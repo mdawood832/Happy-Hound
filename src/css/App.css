@@ -46,11 +46,18 @@
 
 /* LANDING COMPONENT  */
 
+.headerContainer{
+  margin-bottom: 600px;
+}
+
+
 .landingPagePhoto{
   margin-top: 40px;
   height: 420px;
   width: 1050px;
   border-radius: 24px;
+  margin-bottom: 50px;
+  position: relative;
 }
 
 .headerDescription{

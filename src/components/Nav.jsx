@@ -4,6 +4,8 @@ import HappyHoundLogo from "../assets/hh (1).png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const Nav = () => {
+
+
   return (
     <nav>
       <div className="navContainer">
@@ -31,13 +33,16 @@ const Nav = () => {
               Products
             </Link>
           </li>
+          
+          
+          <li className='navList'>
+                <Link to="/cart" className='navLink'>
+                <FontAwesomeIcon icon="cart-shopping" />
+                </Link>
+                <span className='cart__length'>2</span>
+         </li>
 
-          <li className="navList">
-            <Link to="/" className="navLink">
-              <FontAwesomeIcon icon="cart-shopping" />
-            </Link>
-            <span className="cart__length">2</span>
-          </li>
+
 
           <li className="navList">
             <Link to="/login" className="navLink">

@@ -10,6 +10,8 @@ import { Route, Routes } from 'react-router-dom';
 //import Footer from './components/Footer';
 import ProductEdit from './pages/ProductEdit';
 import CreateProduct from './pages/ProductCreate';
+import Cart from './pages/Cart'
+import ExploreMore from './components/ExploreMore'
 import Login from './pages/Login';
 import Register from './pages/Register';
 
@@ -97,24 +99,24 @@ class App extends Component {
       this.setState({ products: copyProducts });
     });
   };
-
   render() {
     // console.log(this.state)
   return (
-
     <div className="App">
     
       <Nav /> 
-   
       <Routes>
         <Route path='/' element={<Landing />} />
+        <Route path= '/' element={<Nav />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
         <Route path='/edit/:id' element={ <ProductEdit />}/>
         <Route path='/create' element={<CreateProduct />} />
+        <Route path='/cart' element={<Cart products={this.state.products}/>} />
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
+      <Footer/>
       
      
     </div>
