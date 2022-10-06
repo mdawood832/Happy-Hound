@@ -1,37 +1,23 @@
-
-
 import React from 'react'
 import LandingPagePhoto from '../assets/landingPagePhoto.png'
 
-import Featured from './Featured'
-import ShopNow from './ui/ShopNow'
-import { Link } from "react-router-dom";
-
-
-
-
-
-const Landing = () => {
+function Landing() {
   return (
-    
-    
-    <div>
+    <section id='landing'>
+        <header>
             <div className="headerContainer">
                 <div className="headerDescription">
                     <img className='landingPagePhoto' src={LandingPagePhoto} alt="" />
                 </div>
                 <div className='headerCaption'>
                         <h1 className='shopCaption'>America's Leading Brand for Dogs</h1>
-                </div>
-                       
-                <div>
-                        <Link to='/products'><button className='shopButtonTag'> Shop Now</button></Link> 
-                </div>
-
+                        <a href="/" className='shopButtonTag'>
+                            <button className='shopButton'>Shop Now</button>
+                        </a>
+                    </div>
             </div>
-     
-            </div>
-    
+        </header>
+    </section>
   )
 }
 
