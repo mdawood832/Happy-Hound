@@ -2,10 +2,6 @@
   font-family: 'Quattrocento', serif;
 }
 
-*{
-  font-family: 'Quattrocento', serif;
-}
-
 .navLinks{
   text-decoration: none;
   list-style: none;
@@ -142,5 +138,8 @@ a{
 .dogAccesorieTitleLink{
   color: black;
   font-size: 20px;
-
 }
+
+
+
+
