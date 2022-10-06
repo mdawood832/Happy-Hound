@@ -1,7 +1,7 @@
 import "../css/Products.css";
 import Features from "../components/ui/Features";
 import React, { Component } from "react";
-import { Route, Routes, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 class Products extends Component {
@@ -14,7 +14,7 @@ class Products extends Component {
 
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className="App">
         <h1>Products</h1>
@@ -22,9 +22,9 @@ class Products extends Component {
         {this.props.products.map((product, index) => {
           return (
               <div className="productsContainer" key={index}>
-                      <Link to="/edit/:id">
+                      
                         <h2 className="sectionTitle">{product.name}</h2>
-                      </Link>
+                   
 
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />

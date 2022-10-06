@@ -1,8 +1,9 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
-import { Link , useParams} from 'react-router-dom'
+import { Link , useParams, useLocation } from 'react-router-dom'
 import Features from '../components/ui/Features'
+import ProductEdit from './ProductEdit'
 
 function ProductDetail({products, handleDeleteProduct}){
     const { id } = useParams()
@@ -54,8 +55,8 @@ function ProductDetail({products, handleDeleteProduct}){
                                 <br/>
                                 <br/>
                                 
-                                <Link to='/edit/:id'>
-                                    <button className='editProduct'>
+                                <Link to={'/edit/'+ product._id } >
+                                    <button className='editProduct'  >
                                         Edit Product 
                                     </button>
                                 </Link>

@@ -63,7 +63,7 @@ class CreateProduct extends React.Component {
     }
 
     render() {
-     
+    //  console.log(this.props, 'PC this.props')
         return (
             <>
             <h1>New Product</h1>

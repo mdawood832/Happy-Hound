@@ -39,8 +39,7 @@ class App extends Component {
         }
       })
       .then((data) => {
-        console.log("data", data);
-        // just a quick fix for this to work (data returns undefined...)
+        // console.log("data", data);
         if (data === []) {
           this.setState({ products: data });
         } else {
@@ -65,20 +64,23 @@ class App extends Component {
               type: product.type,
               price: product.price
           }),
+         
           headers: {
               'Content-Type': 'application/json'
           }
       })
       .then((res) => res.json())
       .then((resJson) => {
-          // console.log(resJson)
+          console.log(resJson, 'resJson')
           const copyProducts = [...this.state.products];
           const findIndex = this.state.products.findIndex(
               (product) => product._id === resJson._id
+              
           );
           copyProducts[findIndex] = resJson
           this.setState({
               products: copyProducts,
+              
           });
       });
   };
@@ -107,10 +109,9 @@ class App extends Component {
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path= '/' element={<Nav />} /> 
-
-        <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
-        <Route path='/edit/:id' element={ <ProductEdit />}/>
-        <Route path='/create' element={<CreateProduct />} />
+        <Route path='/products' element={<Products products={this.state.products} />} />
+        <Route path='/edit/:id' element={ <ProductEdit products={this.state.products} handleEditProduct={this.handleEditProduct} />}/>
+        <Route path='/create' element={<CreateProduct />}  />
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       
