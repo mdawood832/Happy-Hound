@@ -1,5 +1,5 @@
 .productImage{
-    width: 500px;
+    width: 550px;
     height: 500px;
     padding: 0px;
     margin: 0px;
@@ -24,6 +24,8 @@
 .product{
     margin: 50px;
     perspective: 1000px;
+    display: flex;
+    flex-direction: column;
 }
 
 .productBlock{
@@ -31,6 +33,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    justify-content: center;
 }
 
 .float-child{
@@ -47,7 +50,7 @@
     width: 500px;
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding-left: 10px;
 }
 
 /* ADD TO CART BUTTON */
@@ -60,6 +63,10 @@
     border-radius: 5px;
     font-size: 20px;
     border: none;
+}
+
+.addToCart:hover{
+    color: black;
 }
 
 /* EDIT DELETE BUTTONS */
@@ -78,7 +85,7 @@
 
 .editDelete{
     display: flex;
+    justify-content: center;
     align-items: center;
-    padding-top: 40px;
-    margin-right: 20px;
+    padding-top: 20px;
 }
