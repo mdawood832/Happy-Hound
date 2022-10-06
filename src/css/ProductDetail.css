@@ -57,12 +57,13 @@
 
 .addToCart{
     background-color: #ADD8E6;
-    color: white;
+    color: black;
     width: 280px;
     height: 40px;
     border-radius: 5px;
     font-size: 20px;
     border: none;
+
 }
 
 .addToCart:hover{
@@ -73,7 +74,7 @@
 
 .editProduct, .deleteProduct{
     background-color: #ADD8E6 ;
-    color: black;
+    color: white;
     width: 120px;
     height:30px;
     border: none;
