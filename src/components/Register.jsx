@@ -3,7 +3,7 @@ import React, { Component } from "react";
 let baseURL = "http://localhost:3003";
 class Register extends Component {
   constructor(props) {
-    super(props); // super is a reference to the parent class (Component) 
+    super(props); // super is a reference to the parent class (Component)
     this.state = {
       username: "",
       password: "",
@@ -28,12 +28,13 @@ class Register extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-		"Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
+        "Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
       },
       body: JSON.stringify(user),
     })
       .then((res) => res.json()) // parse the response as JSON data and return it to the next .then()
-      .then((data) => { // data is the parsed JSON data
+      .then((data) => {
+        // data is the parsed JSON data
         console.log("data", data); // log the data object to the console
         if (data.status === 200) {
           localStorage.setItem("token", data.token);
@@ -91,3 +92,4 @@ class Register extends Component {
 }
 
 export default Register;
+              

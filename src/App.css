@@ -2,23 +2,32 @@
   font-family: 'Quattrocento', serif;
 }
 
+*{
+  font-family: 'Quattrocento', serif;
+}
+
 .navLinks{
   text-decoration: none;
   list-style: none;
   display: flex;
   align-items:center;
+  /* width: 1600px; */
+  padding-bottom: 20px;
 }
 
 .navList{
   padding: 12px;
 }
 
+.navLink{
+  color: black;
+}
 
 .navContainer {
-  display: flex;
-  align-items: center;
   width: 100%;
   max-width: 1200px;
+  /* height: 310px; */
+  height: 180px;
   padding: 0 24px;
   display: flex;
   justify-content: space-between;
@@ -29,18 +38,21 @@
 
 .logo{
   width: 250px;
-  position: absolute;
+  /* position: absolute;
   left:0;
-  top:0;
+  top:0; */
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
+  padding-bottom: 20px;
+
 }
 
 /* LANDING COMPONENT  */
 
 .landingPagePhoto{
-  height: 400px;
+  margin-top: 40px;
+  height: 420px;
   width: 1050px;
   border-radius: 24px;
 }
@@ -83,77 +95,52 @@
 
 }
 
+/* FEATURED */
 
-// Login/Register Components
-
-body {
-  padding: 0px;
-  margin: 0px;
-  font-family: 'Ubuntu', sans-serif;
+#features{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
 }
 
-.container {
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    background-color: #f5f5f5;
+
+.featuredSectionTitle{
+  padding-top: 320px;
   display: flex;
-  flex-flow: row wrap;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 32px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.dogAccessories{
+  display: flex;
+  justify-content: center;
+  width: 1050px;
+}
+
+.dogAccesorieImage{
+  padding-top: 30px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 24px;
+}
+
+.dogAccesorie{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
 }
 
-.login,
-.register {
-  width: 400px;
-}
-
-.login h2,
-.register h2 {
-  font-size: 45px;
-  text-transform: uppercase;
-  text-align: center;
-}
-
-.login a {
-  text-align: center;
-}
-
-input[type='text'] {
-  background-color: #e6e6e6;
-  color: #827ffe;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border: none;
-  width: 85%;
-  padding: 20px 30px;
-}
-
-input[type='password'] {
-  background-color: #e6e6e6;
-  padding: 20px 30px;
-  color: #827ffe;
-  font-size: 16px;
-  margin-bottom: 20px;
-  border: none;
-  width: 85%;
-}
-
-input[type='submit'] {
-  padding: 15px 0px;
-  background-color: #827ffe;
-  color: #fff;
+.dogAccesorieTitleLink{
+  color: black;
   font-size: 20px;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border: none;
-  width: 100%;
-}
 
-.check {
-  font-size: 16px;
 }

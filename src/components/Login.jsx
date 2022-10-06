@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {  Link } from "react-router-dom";
+ import {  Link } from "react-router-dom";
 
 
 
@@ -54,36 +54,43 @@ class Login extends Component {
   };
 
   render() {
+     
     return (
       <div className="container">
         <div className="row">
           <div className="col-md-4 col-md-offset-4">
             <div className="panel panel-default">
+             
               <div className="panel-heading">
-                <h3 className="panel-title">Login</h3>
-
-                <div className="panel-tools">
-                  <Link to="/register" className="btn btn-link">Register</Link>
-                </div>
+                <h3 className="panel-title">Sign In</h3>
+                 <div className="panel-tools">
+                  <Link to="/register" className="btn btn-sm btn-info">
+                    Register
+                  </Link>
               </div>
+
               <div className="panel-body">
                 <form onSubmit={this.loginUser}>
                   <div className="form-group">
                     <label htmlFor="username">Username</label>
                     <input
                       type="text"
-                      className="form-control"
                       name="username"
+                      value={this.state.username}
                       onChange={this.handleChange}
+                      className="form-control"
+                      placeholder="Username"
                     />
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>
                     <input
                       type="password"
-                      className="form-control"
                       name="password"
+                      value={this.state.password}
                       onChange={this.handleChange}
+                      className="form-control"
+                      placeholder="Password"
                     />
                   </div>
                   <button type="submit" className="btn btn-primary">
@@ -95,10 +102,17 @@ class Login extends Component {
           </div>
         </div>
       </div>
+      </div>
     );
   }
 }
- 
- export default Login; 
 
-  
+
+   export default Login;
+            
+                 
+                   
+                         
+                          
+                
+            
