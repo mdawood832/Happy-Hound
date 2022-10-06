@@ -11,6 +11,7 @@ class ProductEdit extends Component {
       description: "",
       type: "",
       price: "",
+      id: ""
     };
   }
 
@@ -21,13 +22,13 @@ class ProductEdit extends Component {
       description: this.props.description,
       type: this.props.type,
       price: this.props.price,
+      id:this.props.id
     });
-    console.log(this.state, "state");
+    // console.log(this.state, "state");
   }
 
   // call this function on every keystroke
   handleChange = (e) => {
-    // console.log(e, 'e')
     this.setState({
       //grabs all details dynamically in this.state using e.target
       [e.target.id]: e.target.value,
@@ -36,14 +37,24 @@ class ProductEdit extends Component {
     // console.log(e.target.id)
   };
 
+  preventDefaultOnSubmit = (e) => {
+    e.preventDefault()
+    const product = this.state
+    console.log(product, 'brownie')
+    this.props.handleEditProduct(e, product)
+
+}
+
   render() {
     console.log(this.props, "this.props.edit");
     console.log(this.state, "state after mount");
+
+    
     return (
       <>
         <h1>Edit Product</h1>
 
-        <form onSubmit={this.handleEditProduct} className="EditForm">
+        <form onSubmit={this.preventDefaultOnSubmit} className="EditForm">
           <input
             id="name"
             type="text"
@@ -82,6 +93,15 @@ class ProductEdit extends Component {
             onChange={this.handleChange}
             value={this.state.price}
             placeholder="edit price"
+            className="editProductInput"
+          />
+
+        <input
+            id="id"
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.id}
+            placeholder="edit id"
             className="editProductInput"
           />
 

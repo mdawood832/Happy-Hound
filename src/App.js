@@ -54,7 +54,8 @@ class App extends Component {
     this.setState({ products: copyProducts });
   };
 
-    handleEditProduct = (product) => {
+    handleEditProduct = (e, product) => {
+      console.log(product, 'editproduct')
       fetch(baseURL + '/products/' + product._id, {
           method: 'PUT',
           body: JSON.stringify({
@@ -110,7 +111,7 @@ class App extends Component {
         <Route path='/' element={<Landing />} />
         <Route path= '/' element={<Nav />} /> 
         <Route path='/products' element={<Products products={this.state.products} />} />
-        <Route path='/edit/:id' element={ <ProductEdit products={this.state.products} handleEditProduct={this.handleEditProduct} />}/>
+        <Route path='/edit/:id' element={ <ProductEdit products={this.state.products._id} handleEditProduct={this.handleEditProduct} />}/>
         <Route path='/create' element={<CreateProduct />}  />
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
