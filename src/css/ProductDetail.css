@@ -1,0 +1,84 @@
+.productImage{
+    width: 500px;
+    height: 500px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.backToProducts{
+    display: flex;
+    align-items: center;
+    color: black;
+}
+
+.productsLink{
+    margin: 10px;
+    color: black;
+}
+
+.productsLink:hover{
+    color:#ADD8E6 ;
+}
+
+
+.product{
+    margin: 50px;
+    perspective: 1000px;
+}
+
+.productBlock{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.float-child{
+    width: 50%;
+    float: right;
+    margin: 20px;
+    display: inline-block;
+    margin-top: -580px;
+
+}
+
+
+.productDescription{
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ADD TO CART BUTTON */
+
+.addToCart{
+    background-color: #ADD8E6;
+    color: white;
+    width: 280px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    border: none;
+}
+
+/* EDIT DELETE BUTTONS */
+
+.editProduct, .deleteProduct{
+    background-color: #ADD8E6 ;
+    color: black;
+    width: 120px;
+    height:30px;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+    position: relative;
+    justify-content: center;
+}
+
+.editDelete{
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    margin-right: 20px;
+}
