@@ -1,32 +1,99 @@
 
 import { faSave } from '@fortawesome/free-regular-svg-icons';
-import React, {Component} from 'react'
-import { Link } from "react-router-dom";
+import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+import App from '../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-class ProductEdit extends Component {
-    constructor(props){
-        super(props)
-        this.state = {     
-            name: '', //originally had this as empty string but changed to prop to pass to current value???
-            imgURL: '',
-            description: '',
-            type: '',
-            price: ''
+
+  
+    // edit a product in the database and update  the product that is displayed 
+    // use functions from App.js to update the state of the products 
+    // in the database
+
+
+
+     
+
+
+    class ProductEdit extends Component {
+        constructor(props) {
+            super(props)
+            this.state = {
+                product: {
+                    name: '',
+                    imgURL: '',
+                    description: '',
+                    type: '',
+                    price: ''
+                },
+                isLoaded: false,
+                error: null
+            }
         }
-    }
-
-    // call this function on every keystroke
-    handleChange = (e) => {
-        this.setState({
-            //grabs all details dynamically in this.state using e.target
-            [e.target.id]: e.target.value
-        })
-    }
-
-
-
-    render() {
-        return (
+    
+        componentDidMount() {
+            this.getProduct()
+        }
+    
+        getProduct = () => {
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/products/${this.props.match.params.id}`)
+            .then(res => {
+                if (res.status === 200) {
+                    return res.json()
+                } else {
+                    return res.json().then(data => Promise.reject(data))
+                }
+            })
+            .then(resJson => {
+                this.setState({
+                    product: resJson,
+                    isLoaded: true
+                })
+            })
+            .catch(error => {
+                this.setState({
+                    error: error,
+                    isLoaded: true
+                })
+            })
+        }
+    
+        handleChange = (e) => {
+            const updatedProduct = {...this.state.product}
+            updatedProduct[e.target.name] = e.target.value
+            this.setState({product: updatedProduct})
+        }
+    
+        handleSubmit = (e) => {
+            e.preventDefault()
+            fetch(`${process.env.REACT_APP_BACKEND_URL}/products/${this.props.match.params.id}`, {
+                method: 'PUT',
+                body: JSON.stringify(this.state.product),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(res => {
+                if (res.status === 200) {
+                    return res.json()
+                } else {
+                    return res.json().then(data => Promise.reject(data))
+                }
+            })
+            .then(resJson => {
+                this.props.handleUpdateProduct(resJson)
+                this.props.history.push(`/products/${this.props.match.params.id}`)
+            })
+            .catch(error => {
+                this.setState({
+                    error: error
+                })
+            })
+        }
+      
+        render() {
+       return ( 
             <>
             <h1>Edit Product</h1>
 
@@ -89,5 +156,11 @@ class ProductEdit extends Component {
         )
     }
 }
+
+
+    
+
+
+
 
 export default ProductEdit
