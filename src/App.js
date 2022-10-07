@@ -14,6 +14,7 @@ import Cart from './pages/Cart'
 import ExploreMore from './components/ExploreMore'
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AboutUs from './pages/AboutUs'
 
 
 
@@ -110,6 +111,7 @@ class App extends Component {
         <Route path= '/' element={<Nav />} /> 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/aboutus" element={<AboutUs />} />
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
         <Route path='/edit/:id' element={ <ProductEdit products={this.state.products} handleEditProduct={this.handleEditProduct} />}/>
         <Route path='/create' element={<CreateProduct />} />

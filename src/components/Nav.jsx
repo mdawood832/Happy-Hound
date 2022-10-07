@@ -54,6 +54,12 @@ const Nav = () => {
               Sign Up
             </Link>
           </li>
+
+          <li className="navList">
+            <Link to="/aboutus" className="navLink">
+              About Us
+            </Link>
+            </li>
         </ul>
       </div>
     </nav>
