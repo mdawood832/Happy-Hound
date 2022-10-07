@@ -64,11 +64,11 @@ class App extends Component {
       fetch(baseURL + '/products/' + product._id, {
           method: 'PUT',
           body: JSON.stringify({
-              name: product.name,
-              imgURL: product.imgURL,
-              description: product.description,
-              type: product.type,
-              price: product.price
+              name: this.state.name,
+              imgURL: this.state.imgURL,
+              description: this.state.description,
+              type: this.state.type,
+              price: this.state.price
           }),
           headers: {
               'Content-Type': 'application/json'

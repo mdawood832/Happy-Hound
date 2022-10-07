@@ -14,30 +14,55 @@ class ProductEdit extends Component {
             price: ''
         }
     }
+//   componentDidMount() {
+//     this.setState({
+//       name: this.props.name,
+//       imgURL: this.props.imgURL,
+//       description: this.props.description,
+//       type: this.props.type,
+//       price: this.props.price,
+//       id:this.props.id
+//     });
+//     // console.log(this.state, "state");
+//   }
 
-    // call this function on every keystroke
-    handleChange = (e) => {
-        this.setState({
-            //grabs all details dynamically in this.state using e.target
-            [e.target.id]: e.target.value
-        })
-    }
 
 
+handleChange = (e) => {
+    this.setState({
+      //grabs all details dynamically in this.state using e.target
+      [e.target.id]: e.target.value,
+    });
+   
+  };
 
-    render() {
-        return (
-            <>
-            <h1>Edit Product</h1>
 
-            <form onSubmit={this.props.handleEditProduct} className='EditForm' >
+preventDefaultOnSubmit = (e) => {
+  e.preventDefault()
+   const product = this.state
+   console.log(product, 'brownie')
+   this.props.handleEditProduct(e, product)
+}
+
+
+  render() {
+    console.log(this.props, "this.props.edit");
+    console.log(this.state, "state after mount");
+
+    
+    return (
+      <>
+     
+        <h1>Edit Product</h1>
+
+        <form onSubmit={this.preventDefaultOnSubmit} className="EditForm">
 
                 <input 
                     id='name'
                     type='text' 
                     onChange={this.handleChange}
 
-                    value={this.props.name}
+                    value={this.state.name}
 
                     placeholder='Edit Product Name'
                     className='editProductInput'
@@ -47,7 +72,7 @@ class ProductEdit extends Component {
                     type='text' 
                     onChange={this.handleChange}
 
-                    value={this.props.imgURL}
+                    value={this.state.imgURL}
 
                     placeholder='edit image'
                     className='editProductInput'
@@ -57,7 +82,7 @@ class ProductEdit extends Component {
                     type='text' 
                     onChange={this.handleChange}
 
-                    value={this.props.description}
+                    value={this.state.description}
 
                     placeholder='edit description'
                     className='editProductInput'
@@ -67,7 +92,7 @@ class ProductEdit extends Component {
                     type='text' 
                     onChange={this.handleChange}
 
-                    value={this.props.type}
+                    value={this.state.type}
 
                     placeholder=' edit type'
                     className='editProductInput'
@@ -77,7 +102,7 @@ class ProductEdit extends Component {
                     type='text' 
                     onChange={this.handleChange}
 
-                    value={this.props.price}
+                    value={this.state.price}
 
                     placeholder='edit price'
                     className='editProductInput'
