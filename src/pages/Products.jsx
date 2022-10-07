@@ -2,6 +2,8 @@ import "../css/Products.css";
 import Features from "../components/ui/Features";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import ProductEdit from "./ProductEdit";
+
 
 
 class Products extends Component {
@@ -29,6 +31,8 @@ class Products extends Component {
                       <Link to={'/detail/'+ product._id}>
                         <img src={product.imgURL} />
                       </Link>
+
+                     
               </div>
           );
         })}

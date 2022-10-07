@@ -2,6 +2,7 @@ import { faSave } from "@fortawesome/free-regular-svg-icons";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+
 let baseURL = process.env.REACT_APP_BACKEND_URL;
 
 class ProductEdit extends Component {
@@ -18,17 +19,17 @@ class ProductEdit extends Component {
   }
 
 
-  componentDidMount() {
-    this.setState({
-      name: this.props.name,
-      imgURL: this.props.imgURL,
-      description: this.props.description,
-      type: this.props.type,
-      price: this.props.price,
-      id:this.props.id
-    });
-    // console.log(this.state, "state");
-  }
+//   componentDidMount() {
+//     this.setState({
+//       name: this.props.name,
+//       imgURL: this.props.imgURL,
+//       description: this.props.description,
+//       type: this.props.type,
+//       price: this.props.price,
+//       id:this.props.id
+//     });
+//     // console.log(this.state, "state");
+//   }
 
 
 
@@ -43,9 +44,9 @@ class ProductEdit extends Component {
 
 preventDefaultOnSubmit = (e) => {
   e.preventDefault()
-  const product = this.state
-  console.log(product, 'brownie')
-  this.props.handleEditProduct(e, product)
+//   const product = this.state
+//   console.log(product, 'brownie')
+//   this.props.handleEditProduct(e, product)
 }
 
 
@@ -56,9 +57,10 @@ preventDefaultOnSubmit = (e) => {
     
     return (
       <>
+     
         <h1>Edit Product</h1>
 
-        <form onSubmit={this.preventDefaultOnSubmit} className="EditForm">
+        <form onSubmit={this.handleEditProduct} className="EditForm">
           <input
             id="name"
             type="text"
