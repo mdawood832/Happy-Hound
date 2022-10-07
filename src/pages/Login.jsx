@@ -33,7 +33,7 @@ class Login extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        //"Access-Control-Allow-Origin": "*", //  default header for JSON data
+        "Access-Control-Allow-Origin": "*", //  default header for JSON data
       },
       credentials: "include", //  include the cookies in the request to the server
       body: JSON.stringify(user), //  convert the user object to a JSON string and set it as the body of the request
@@ -49,7 +49,7 @@ class Login extends Component {
         console.log("err", err);
       });
   };
-
+  
   render() {
     return (
       <div className="container">
@@ -88,7 +88,7 @@ class Login extends Component {
                         placeholder="Password"
                       />
                     </div>
-                    <button type="submit" className="btn btn-primary">
+                    <button type="submit" className="btn btn-primary btn-block">
                       Login
                     </button>
                   </form>
@@ -100,6 +100,7 @@ class Login extends Component {
       </div>
     );
   }
-}
-
+}            
+  
 export default Login;
+
