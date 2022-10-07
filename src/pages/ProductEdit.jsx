@@ -1,30 +1,23 @@
 
 import { faSave } from '@fortawesome/free-regular-svg-icons';
 import React, {Component} from 'react'
-import { Link } from "react-router-dom";
+
+
+let baseURL = process.env.REACT_APP_BACKEND_URL;
+// console.log('current base URL:', baseURL)
 
 class ProductEdit extends Component {
     constructor(props){
         super(props)
         this.state = {     
-            name: '', //originally had this as empty string but changed to prop to pass to current value???
+            name: '', 
             imgURL: '',
             description: '',
             type: '',
-            price: ''
+            price: '',
+            id: ''
         }
     }
-//   componentDidMount() {
-//     this.setState({
-//       name: this.props.name,
-//       imgURL: this.props.imgURL,
-//       description: this.props.description,
-//       type: this.props.type,
-//       price: this.props.price,
-//       id:this.props.id
-//     });
-//     // console.log(this.state, "state");
-//   }
 
 
 
@@ -36,44 +29,73 @@ handleChange = (e) => {
    
   };
 
+  handleEditProduct = (e, product) => {
+      e.preventDefault()
+    fetch(baseURL + '/products/' + product._id, {
+        method: 'PUT',
+        body: JSON.stringify({
+            name: this.state.name,
+            imgURL: this.state.imgURL,
+            description: this.state.description,
+            type: this.state.type,
+            price: this.state.price,
+            id: this.state.price
+        }),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then((res) => res.json())
+    .then((resJson) => {
+        // console.log(resJson)
+        const copyProducts = [...this.state.products];
+        const findIndex = this.state.products.findIndex(
+            (product) => product._id === resJson._id
+        );
+        copyProducts[findIndex] = resJson
+        this.setState({
+            products: copyProducts,
+        });
+        console.log(this.props)
+    });
+};
 
-preventDefaultOnSubmit = (e) => {
-  e.preventDefault()
-   const product = this.state
-   console.log(product, 'brownie')
-   this.props.handleEditProduct(e, product)
-}
 
 
-  render() {
-    console.log(this.props, "this.props.edit");
-    console.log(this.state, "state after mount");
 
-    
+// preventDefaultOnSubmit = (e) => {
+//   e.preventDefault()
+//    const product = this.state
+//    console.log(product, 'brownie')
+//    this.props.handleEditProduct(e, product)
+//    console.log(e, 'e')
+// }
+
+ 
+
+    render() { 
+        console.log(this.props, "this.props.edit");
     return (
       <>
      
         <h1>Edit Product</h1>
 
-        <form onSubmit={this.preventDefaultOnSubmit} className="EditForm">
+        <form onSubmit={this.handleEditProduct} className="EditForm">
 
                 <input 
                     id='name'
                     type='text' 
                     onChange={this.handleChange}
-
                     value={this.state.name}
-
                     placeholder='Edit Product Name'
                     className='editProductInput'
+                
                 />
                 <input 
                     id='imgURL'
                     type='text' 
                     onChange={this.handleChange}
-
                     value={this.state.imgURL}
-
                     placeholder='edit image'
                     className='editProductInput'
                 />
@@ -81,9 +103,7 @@ preventDefaultOnSubmit = (e) => {
                     id='description'
                     type='text' 
                     onChange={this.handleChange}
-
                     value={this.state.description}
-
                     placeholder='edit description'
                     className='editProductInput'
                 />
@@ -91,9 +111,7 @@ preventDefaultOnSubmit = (e) => {
                     id='type'
                     type='text' 
                     onChange={this.handleChange}
-
                     value={this.state.type}
-
                     placeholder=' edit type'
                     className='editProductInput'
                 />
@@ -101,9 +119,7 @@ preventDefaultOnSubmit = (e) => {
                     id='price'
                     type='text' 
                     onChange={this.handleChange}
-
                     value={this.state.price}
-
                     placeholder='edit price'
                     className='editProductInput'
                 />
