@@ -2,6 +2,8 @@ import { faSave } from "@fortawesome/free-regular-svg-icons";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+let baseURL = process.env.REACT_APP_BACKEND_URL;
+
 class ProductEdit extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +12,11 @@ class ProductEdit extends Component {
       imgURL: "",
       description: "",
       type: "",
-      price: "",
-      id: ""
+      price: ""
+      
     };
   }
+
 
   componentDidMount() {
     this.setState({
@@ -27,23 +30,24 @@ class ProductEdit extends Component {
     // console.log(this.state, "state");
   }
 
-  // call this function on every keystroke
+
+
   handleChange = (e) => {
     this.setState({
       //grabs all details dynamically in this.state using e.target
       [e.target.id]: e.target.value,
     });
-    // console.log(e.target.value)
-    // console.log(e.target.id)
+   
   };
 
-  preventDefaultOnSubmit = (e) => {
-    e.preventDefault()
-    const product = this.state
-    console.log(product, 'brownie')
-    this.props.handleEditProduct(e, product)
 
+preventDefaultOnSubmit = (e) => {
+  e.preventDefault()
+  const product = this.state
+  console.log(product, 'brownie')
+  this.props.handleEditProduct(e, product)
 }
+
 
   render() {
     console.log(this.props, "this.props.edit");
@@ -96,14 +100,6 @@ class ProductEdit extends Component {
             className="editProductInput"
           />
 
-        <input
-            id="id"
-            type="text"
-            onChange={this.handleChange}
-            value={this.state.id}
-            placeholder="edit id"
-            className="editProductInput"
-          />
 
           <input type="submit" value="Edit Product" />
         </form>

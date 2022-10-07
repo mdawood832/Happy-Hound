@@ -19,9 +19,9 @@ class Products extends Component {
       <div className="App">
         <h1>Products</h1>
         
-        {this.props.products.map((product, index) => {
+        {this.props.products.map((product) => {
           return (
-              <div className="productsContainer" key={index}>
+              <div className="productsContainer" key={product._id}>
                       
                         <h2 className="sectionTitle">{product.name}</h2>
                    

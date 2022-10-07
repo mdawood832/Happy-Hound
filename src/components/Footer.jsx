@@ -17,6 +17,7 @@ const Footer = () => {
                     </div>
                 </Link>
             </div>
+
         </div>
     </footer>
   )
