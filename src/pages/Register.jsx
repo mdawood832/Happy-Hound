@@ -32,7 +32,7 @@ class Register extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        //"Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
+        "Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
       },
       body: JSON.stringify(user),
     })

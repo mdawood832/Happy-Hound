@@ -34,7 +34,7 @@ class Login extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        //"Access-Control-Allow-Origin": "*", //  default header for JSON data
+        "Access-Control-Allow-Origin": "*", //  default header for JSON data
       },
       credentials: "include", //  include the cookies in the request to the server
       body: JSON.stringify(user), //  convert the user object to a JSON string and set it as the body of the request
