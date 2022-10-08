@@ -112,13 +112,12 @@ class App extends Component {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path='/products' element={<Products products={this.state.products} handleDeleteProduct={this.handleDeleteProduct}/>} />
-        <Route path='/edit/:id' element={ <ProductEdit />}/>
+        <Route path='/edit/:id' element={ <ProductEdit name={this.state.name} description={this.state.description} imgURL={this.state.imgURL} price={this.state.price} type={this.state.type} _id={this.state._id} />}/>
         <Route path='/create' element={<CreateProduct />} />
         <Route path='/cart' element={<Cart products={this.state.products}/>} />
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       <Footer/>
-      
      
     </div>
 

@@ -16,7 +16,7 @@ function ProductDetail({products, handleDeleteProduct}){
 
                         <div className='backToProducts'>
                             <Link to='/products' className='productsLink'>
-                               <h2> <FontAwesomeIcon icon='arrow-left' />  &nbsp; Dog Accessories </h2>
+                               <h2> <FontAwesomeIcon icon='arrow-left' />  &nbsp; Products </h2>
                             </Link>
                         </div>
 
