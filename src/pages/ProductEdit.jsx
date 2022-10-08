@@ -15,16 +15,32 @@ class ProductEdit extends Component {
       price: "",
     };
   }
-   
 
-  // call this function on every keystroke
-  handleChange = (e) => {
+  componentDidMount() {
+    this.getProduct();
+  }
+  getProduct = async () => {
+    const { id } = this.props.match.params; //this is the id of the product I dont know why its undefined
+    const response = await fetch(`http://localhost:3000/products/${id}`);
+    const data = await response.json();
     this.setState({
-      //grabs all details dynamically in this.state using e.target
-      [e.target.id]: e.target.value,
+      name: data.name,
+      imgURL: data.imgURL,
+      description: data.description,
+      type: data.type,
+      price: data.price,
     });
   };
 
+
+
+  handleChange = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+
+
+  
   render() {
     return (
       <>
@@ -83,5 +99,4 @@ class ProductEdit extends Component {
     );
   }
 }
-
 export default ProductEdit
