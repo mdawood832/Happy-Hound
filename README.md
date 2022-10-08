@@ -1,6 +1,9 @@
 ## Project Name
 Happy Hound 
 
+## Deployed App
+https://happy-hound-react-app.herokuapp.com/
+
 ## Project Description
 Happy Hound is an E-commerce Store for dog accessories
 
@@ -28,27 +31,25 @@ Happy Hound is an E-commerce Store for dog accessories
 
 ## User Stories
 As a user, I want:
+<br>
 to ADD/CREATE a product for other users to purchase
+<br>
 to EDIT my product ie. price/quantity etc.
+<br>
 to DELETE a product if it is no longer useful to customers
+<br>
 to USE login functionality
+<br>
 to GET product id for a show page
 
 ### MVP Goals
-Use MongoDB and Express to create the back-end
-
-Use React to create the front-end
-
+Use MongoDB and Express to create the back-end <br>
+Use React to create the front-end <br>
 Use multiple functional components
-
 Give user capability for full CRUD (products for MVP, see post-MVP... preferred CRUD demonstration)
-
 Deploy to Heroku
-
 Authorization and Authentication (user sign in and sign up)
-
 CSS styling to match wireframe and branding
-
 Include media queries
 
 
