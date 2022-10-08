@@ -16,21 +16,21 @@ class ProductEdit extends Component {
     };
   }
 
-  componentDidMount() {
-    this.getProduct();
-  }
-  getProduct = async () => {
-    const { id } = this.props.match.params; //this is the id of the product I dont know why its undefined
-    const response = await fetch(`http://localhost:3000/products/${id}`);
-    const data = await response.json();
-    this.setState({
-      name: data.name,
-      imgURL: data.imgURL,
-      description: data.description,
-      type: data.type,
-      price: data.price,
-    });
-  };
+//   componentDidMount() {
+//     this.getProduct();
+//   }
+//   getProduct = async () => {
+//     const { id } = this.props.match.params; //this is the id of the product I dont know why its undefined
+//     const response = await fetch(`http://localhost:3000/products/${id}`);
+//     const data = await response.json();
+//     this.setState({
+//       name: data.name,
+//       imgURL: data.imgURL,
+//       description: data.description,
+//       type: data.type,
+//       price: data.price,
+//     });
+//   };
 
 
 

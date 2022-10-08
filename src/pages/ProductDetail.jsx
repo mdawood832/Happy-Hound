@@ -59,7 +59,7 @@ function ProductDetail({products, handleDeleteProduct}){
                                 <br/>
 
                                 <div className='editDelete'>
-                                    <Link to='/edit/:id'>
+                                    <Link to={'/edit/'+ product._id}>
                                         <button className='editProduct'>
                                             Edit Product 
                                         </button>
