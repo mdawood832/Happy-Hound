@@ -1,12 +1,21 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import { Link , useParams} from 'react-router-dom'
 import '../css/ProductDetail.css'
 
-function ProductDetail({products, handleDeleteProduct}){
+function ProductDetail({products, handleDeleteProduct, handleEditProduct}){
     const { id } = useParams()
     const product = products.find(product => product._id === id)
+    
+        // call this function on every keystroke
+        const handleChange = (e) => {
+            this.useState({
+                //grabs all details dynamically in this.state using e.target
+                [e.target.id]: e.target.value
+            })
+        }
+
 
     return (
         <div className='productBody'>
@@ -81,7 +90,73 @@ function ProductDetail({products, handleDeleteProduct}){
                     </div>
                 </div>
             </main>
+
+            <>
+                <h1>Edit Product</h1>
+                <div className='createContainer'>
+                <form onSubmit={this.props.handleEditProduct} className='EditForm' >
+    
+                    <input 
+                        id='name'
+                        type='text' 
+                        onChange={handleChange()}
+    
+                        value={product.name}
+    
+                        placeholder='Edit Product Name'
+                        className='editProductInput'
+                    />
+                    <input 
+                        id='imgURL'
+                        type='text' 
+                        onChange={handleChange()}
+    
+                        value={product.imgURL}
+    
+                        placeholder='Edit image'
+                        className='editProductInput'
+                    />
+                    <input 
+                        id='description'
+                        type='text' 
+                        onChange={handleChange()}
+    
+                        value={product.description}
+    
+                        placeholder='Edit description'
+                        className='editProductInput'
+                    />
+                    <input 
+                        id='type'
+                        type='text' 
+                        onChange={handleChange()}
+    
+                        value={product.type}
+    
+                        placeholder='Edit type'
+                        className='editProductInput'
+                    />
+                    <input 
+                        id='price'
+                        type='text' 
+                        onChange={handleChange()}
+    
+                        value={product.price}
+    
+                        placeholder='Edit price'
+                        className='editProductInput'
+                    />
+                    
+                   <input type="submit"className='submitFormButton' value="Edit Product" />
+                </form>
+                </div>
+                </>
+
+
+
         </div>
+
+        
       )
 }
 
