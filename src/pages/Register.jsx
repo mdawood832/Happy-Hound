@@ -26,11 +26,13 @@ class Register extends Component {
     const { username, password } = this.state; //  destructure the username and password properties from the state object
     const user = { username, password };
     console.log("user", user);
-    fetch(`${baseURL}/users/signup`, {
+    // connection refused error 
+   
+    fetch(`${baseURL}/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
+        //"Access-Control-Allow-Origin": "*", // allow cross-origin requests to the server even though it's running on a different port
       },
       body: JSON.stringify(user),
     })
