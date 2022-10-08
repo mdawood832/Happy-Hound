@@ -11,6 +11,7 @@ Happy Hound is an E-commerce Store for dog accessories
 
 
 ## Technologies Used 
+![Mongoose ODM](https://img.shields.io/badge/-Mongoose_ODM-05122A?style=flat&logo=mongodb)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
 ![Express](https://img.shields.io/badge/-Express-05122A?style=flat&logo=express)
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
