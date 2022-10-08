@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { Component } from 'react'
 import { Link , useParams, useLocation} from 'react-router-dom'
 import '../css/ProductDetail.css'
+import ProductEdit from './ProductEdit'
 
-function ProductDetail({products, handleDeleteProduct}){
+function ProductDetail({products, handleDeleteProduct, handleEditProduct}){
     const { id } = useParams()
     const product = products.find(product => product._id === id)
 
@@ -64,6 +65,8 @@ function ProductDetail({products, handleDeleteProduct}){
                                             Edit Product 
                                         </button>
                                     </Link>
+
+                                  
 
                                     <br/>
                                     <br/>

@@ -47,7 +47,7 @@ handleChange = (e) => {
     })
     .then((res) => res.json())
     .then((resJson) => {
-        // console.log(resJson)
+        console.log(resJson)
         const copyProducts = [...this.state.products];
         const findIndex = this.state.products.findIndex(
             (product) => product._id === resJson._id
@@ -56,6 +56,7 @@ handleChange = (e) => {
         this.setState({
             products: copyProducts,
         });
+        // this.props.handleEditProduct(resJson._id)
         console.log(this.props)
     });
 };
