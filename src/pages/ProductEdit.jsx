@@ -5,92 +5,83 @@ import { Link } from "react-router-dom";
 import '../css/EditProduct.css'
 
 class ProductEdit extends Component {
-    constructor(props){
-        super(props)
-        this.state = {     
-            name: '', //originally had this as empty string but changed to prop to pass to current value???
-            imgURL: '',
-            description: '',
-            type: '',
-            price: ''
-        }
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "", //originally had this as empty string but changed to prop to pass to current value???
+      imgURL: "",
+      description: "",
+      type: "",
+      price: "",
+    };
+  }
+   
 
+  // call this function on every keystroke
+  handleChange = (e) => {
+    this.setState({
+      //grabs all details dynamically in this.state using e.target
+      [e.target.id]: e.target.value,
+    });
+  };
 
-    // call this function on every keystroke
-    handleChange = (e) => {
-        this.setState({
-            //grabs all details dynamically in this.state using e.target
-            [e.target.id]: e.target.value
-        })
-    }
+  render() {
+    return (
+      <>
+        <h1>Edit Product</h1>
+        <div className="createContainer">
+          <form onSubmit={this.props.handleEditProduct} className="EditForm">
+            <input
+              id="name"
+              type="text"
+              onChange={this.handleChange}
+              value={this.props.name}
+              placeholder="Edit Product Name"
+              className="editProductInput"
+            />
+            <input
+              id="imgURL"
+              type="text"
+              onChange={this.handleChange}
+              value={this.props.imgURL}
+              placeholder="Edit image"
+              className="editProductInput"
+            />
+            <input
+              id="description"
+              type="text"
+              onChange={this.handleChange}
+              value={this.props.description}
+              placeholder="Edit description"
+              className="editProductInput"
+            />
+            <input
+              id="type"
+              type="text"
+              onChange={this.handleChange}
+              value={this.props.type}
+              placeholder="Edit type"
+              className="editProductInput"
+            />
+            <input
+              id="price"
+              type="text"
+              onChange={this.handleChange}
+              value={this.props.price}
+              placeholder="Edit price"
+              className="editProductInput"
+            />
 
-
-
-    render() {
-        return (
-            <>
-            <h1>Edit Product</h1>
-            <div className='createContainer'>
-            <form onSubmit={this.props.handleEditProduct} className='EditForm' >
-
-                <input 
-                    id='name'
-                    type='text' 
-                    onChange={this.handleChange}
-
-                    value={this.props.name}
-
-                    placeholder='Edit Product Name'
-                    className='editProductInput'
-                />
-                <input 
-                    id='imgURL'
-                    type='text' 
-                    onChange={this.handleChange}
-
-                    value={this.props.imgURL}
-
-                    placeholder='Edit image'
-                    className='editProductInput'
-                />
-                <input 
-                    id='description'
-                    type='text' 
-                    onChange={this.handleChange}
-
-                    value={this.props.description}
-
-                    placeholder='Edit description'
-                    className='editProductInput'
-                />
-                <input 
-                    id='type'
-                    type='text' 
-                    onChange={this.handleChange}
-
-                    value={this.props.type}
-
-                    placeholder='Edit type'
-                    className='editProductInput'
-                />
-                <input 
-                    id='price'
-                    type='text' 
-                    onChange={this.handleChange}
-
-                    value={this.props.price}
-
-                    placeholder='Edit price'
-                    className='editProductInput'
-                />
-                
-               <input type="submit"className='submitFormButton' value="Edit Product" />
-            </form>
-            </div>
-            </>
-        )
-    }
+            <input
+              type="submit"
+              className="submitFormButton"
+              value="Edit Product"
+            />
+          </form>
+        </div>
+      </>
+    );
+  }
 }
 
 export default ProductEdit
