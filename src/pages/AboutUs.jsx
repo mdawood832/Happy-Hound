@@ -88,14 +88,13 @@ const AboutUs = (props) => {
           <div className="profile-text">
             <h4>Eric Peltzman</h4>
             <p>
-              
               Full stack developer who loves to learn new things and solve
               problems. I am a team player and I am passionate about creating
-              amazing products. 
+              amazing products.
             </p>
             <div className="social-links">
               <a
-                href="https://www.linkedin.com/in/eric-peltzman"
+                href="https://www.linkedin.com/in/eric-peltzman-552813228"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -105,7 +104,7 @@ const AboutUs = (props) => {
                 ></img>
               </a>
               <a
-                href="https://github.com/Eric-Peltzman33"
+                href="https://github.com/epeltz33"
                 target="_blank"
                 rel="noreferrer"
               >
