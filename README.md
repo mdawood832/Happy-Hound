@@ -1,70 +1,57 @@
-# Getting Started with Create React App
+## Project Name
+Happy Hound 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Description
+Happy Hound is an E-commerce Store for dog accessories
 
-## Available Scripts
 
-In the project directory, you can run:
+|#|Action|URL|HTTP Verb|
+|:---:|:---:|:---:|:---:|
+|1| Index | /products/ | GET |
+|2| Show | /products/:index | GET |
+|3| New | /products/new| GET |
+|4| Create | /products/ | POST |
+|5| Edit | /products/ | GET |
+|6| Update | /products/ | PUT |
+|7| Delete | /products/ | DELETE |
 
-### `npm start`
+## Wireframes
+> Wireframes with basic page layouts<br />
+![happy-hound-landing-page](https://media.git.generalassemb.ly/user/42924/files/9c87ef30-efcb-4c2a-910d-a029e1735f2b)
+![Untitled](https://media.git.generalassemb.ly/user/42924/files/6b1ec971-a718-4c95-8196-cc34c44aec3e)
+![cart-page-happy hound](https://media.git.generalassemb.ly/user/42924/files/e6949693-7bbc-4494-a557-e325dd112e1b)
+![add-product-happy-hound](https://media.git.generalassemb.ly/user/42924/files/e8ea500d-7db1-4c6a-9397-326ef036c1de)
+![sign-in-happy-hound](https://media.git.generalassemb.ly/user/42924/files/e264fe5a-20e5-45e5-91a0-dbb78575a1a9)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## User Stories
+As a user, I want:
+to ADD/CREATE a product for other users to purchase
+to EDIT my product ie. price/quantity etc.
+to DELETE a product if it is no longer useful to customers
+to USE login functionality
+to GET product id for a show page
 
-### `npm run build`
+### MVP Goals
+Use MongoDB and Express to create the back-end
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use React to create the front-end
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Use multiple functional components
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Give user capability for full CRUD (products for MVP, see post-MVP... preferred CRUD demonstration)
 
-### `npm run eject`
+Deploy to Heroku
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Authorization and Authentication (user sign in and sign up)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+CSS styling to match wireframe and branding
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Include media queries
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Stretch Goals
+-Use the Shopify API 
+-Add more animal selections 
