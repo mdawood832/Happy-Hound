@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import '../css/signInSignOut.css'
 
 
-let baseURL = "http://localhost:3003";
+let baseURL = process.env.REACT_APP_BACKEND_URL; 
 class Register extends Component {
   constructor(props) {
     super(props); // super is a reference to the parent class (Component)

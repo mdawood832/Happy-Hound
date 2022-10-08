@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import '../css/signInSignOut.css'
 
-let baseURL = "http://localhost:3003";
+ let baseURL = process.env.REACT_APP_BACKEND_URL;
 
 class Login extends Component {
   // creates a class component called Login
@@ -34,7 +34,7 @@ class Login extends Component {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*", //  default header for JSON data
+        //"Access-Control-Allow-Origin": "*", //  default header for JSON data
       },
       credentials: "include", //  include the cookies in the request to the server
       body: JSON.stringify(user), //  convert the user object to a JSON string and set it as the body of the request
