@@ -37,14 +37,22 @@ const AboutUs = (props) => {
           </div>
         </div>
 
-
         <div className="Kayci">
           <div className="image-block">
-            <img src="https://i.imgur.com/ZKphsDC.jpg" alt="Kayci headshot"></img>
+            <img
+              src="https://i.imgur.com/ZKphsDC.jpg"
+              alt="Kayci headshot"
+            ></img>
           </div>
           <div className="profile-text">
             <h4>Kayci North</h4>
-            <p>Software Engineer pivoting from 14+ years in healthcare. Able to constructively contribute diverse viewpoints and solution-oriented approaches to problems that maximize return. Seeking a dynamic job that cultivates creative problem-solving and organizational skills.</p>
+            <p>
+              Software Engineer pivoting from 14+ years in healthcare. Able to
+              constructively contribute diverse viewpoints and solution-oriented
+              approaches to problems that maximize return. Seeking a dynamic job
+              that cultivates creative problem-solving and organizational
+              skills.
+            </p>
             <div className="social-links">
               <a
                 href="https://www.linkedin.com/in/kayci-north/"
@@ -70,14 +78,21 @@ const AboutUs = (props) => {
           </div>
         </div>
 
-
         <div className="Eric">
           <div className="image-block">
-            <img src="" alt="Eric headshot"></img>
+            <img
+              src="https://i.imgur.com/BEbU7Sc.jpeg"
+              alt="Eric headshot"
+            ></img>
           </div>
           <div className="profile-text">
             <h4>Eric Peltzman</h4>
-            <p>write something about yourself.</p>
+            <p>
+              
+              Full stack developer who loves to learn new things and solve
+              problems. I am a team player and I am passionate about creating
+              amazing products. 
+            </p>
             <div className="social-links">
               <a
                 href="https://www.linkedin.com/in/eric-peltzman"
