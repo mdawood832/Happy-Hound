@@ -39,6 +39,8 @@ class Register extends Component {
         // data is the parsed JSON data
         console.log("data", data); // log the data object to the console
         if (data.status === 200) {
+          alert("success" + data.status);  //  display an alert box with the status code
+          
           localStorage.setItem("token", data.token);
         }
       })
