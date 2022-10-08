@@ -14,11 +14,14 @@
 .productsLink{
     margin: 10px;
     color: black;
+    margin-bottom: 20px;
 }
 
 .productsLink:hover{
-    color:#ADD8E6 ;
+    color: #ADD8E6;
 }
+
+
 
 
 .product{
@@ -38,10 +41,11 @@
 
 .float-child{
     width: 50%;
-    float: right;
+    /* float: right; */
     margin: 20px;
     display: inline-block;
-    margin-top: -580px;
+    margin-top: -560px;
+    margin-left: 600px;
 
 }
 

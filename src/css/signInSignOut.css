@@ -1,0 +1,11 @@
+.panel-body{
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    margin-left: -300px ;
+
+}
+
+.container{
+
+}

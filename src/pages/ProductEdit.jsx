@@ -2,6 +2,7 @@
 import { faSave } from '@fortawesome/free-regular-svg-icons';
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
+import '../css/EditProduct.css'
 
 class ProductEdit extends Component {
     constructor(props){
@@ -14,6 +15,7 @@ class ProductEdit extends Component {
             price: ''
         }
     }
+
 
     // call this function on every keystroke
     handleChange = (e) => {
@@ -29,7 +31,7 @@ class ProductEdit extends Component {
         return (
             <>
             <h1>Edit Product</h1>
-
+            <div className='createContainer'>
             <form onSubmit={this.props.handleEditProduct} className='EditForm' >
 
                 <input 
@@ -49,7 +51,7 @@ class ProductEdit extends Component {
 
                     value={this.props.imgURL}
 
-                    placeholder='edit image'
+                    placeholder='Edit image'
                     className='editProductInput'
                 />
                 <input 
@@ -59,7 +61,7 @@ class ProductEdit extends Component {
 
                     value={this.props.description}
 
-                    placeholder='edit description'
+                    placeholder='Edit description'
                     className='editProductInput'
                 />
                 <input 
@@ -69,7 +71,7 @@ class ProductEdit extends Component {
 
                     value={this.props.type}
 
-                    placeholder=' edit type'
+                    placeholder='Edit type'
                     className='editProductInput'
                 />
                 <input 
@@ -79,12 +81,13 @@ class ProductEdit extends Component {
 
                     value={this.props.price}
 
-                    placeholder='edit price'
+                    placeholder='Edit price'
                     className='editProductInput'
                 />
                 
-               <input type="submit" value="Edit Product" />
+               <input type="submit"className='submitFormButton' value="Edit Product" />
             </form>
+            </div>
             </>
         )
     }

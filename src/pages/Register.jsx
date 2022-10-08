@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import '../css/signInSignOut.css'
+
 
 let baseURL = "http://localhost:3003";
 class Register extends Component {

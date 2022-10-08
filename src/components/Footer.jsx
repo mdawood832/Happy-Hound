@@ -9,9 +9,11 @@ const Footer = () => {
         <div className='container'>
             <div className='row rowColumn'>
                 <Link to="/">
-                    <figure className='footerLogo'>
-                        <img src={FooterImage} className='footerLogoImage' alt="" />
-                    </figure>
+                    <div className='logoFooter'>
+                        <figure className='footerLogo'>
+                            <img src={FooterImage} className='footerLogoImage' alt="" />
+                        </figure>
+                    </div>
                     <div className='footerCopyright'>
                         Copyright &copy; 2022 Happy Hound
                     </div>

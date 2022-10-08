@@ -14,7 +14,9 @@ import Cart from './pages/Cart'
 import ExploreMore from './components/ExploreMore'
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Footer from './components/Footer'
 import AboutUs from './pages/AboutUs'
+
 
 
 
@@ -119,7 +121,6 @@ class App extends Component {
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       <Footer/>
-      
      
     </div>
 
