@@ -26,7 +26,7 @@ Happy Hound is an E-commerce Store for dog accessories
 ![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
 
-<br>
+
 
 ## Routes
 
