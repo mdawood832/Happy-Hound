@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import '../css/signInSignOut.css'
 
-let baseURL = "http://localhost:3003";
+
+let baseURL = process.env.REACT_APP_BACKEND_URL; 
 class Register extends Component {
   constructor(props) {
     super(props); // super is a reference to the parent class (Component)
@@ -24,7 +26,9 @@ class Register extends Component {
     const { username, password } = this.state; //  destructure the username and password properties from the state object
     const user = { username, password };
     console.log("user", user);
-    fetch(`${baseURL}/users/signup`, {
+    // connection refused error 
+   
+    fetch(`${baseURL}/users/register`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,6 +41,8 @@ class Register extends Component {
         // data is the parsed JSON data
         console.log("data", data); // log the data object to the console
         if (data.status === 200) {
+          alert("success" + data.status);  //  display an alert box with the status code
+          
           localStorage.setItem("token", data.token);
         }
       })

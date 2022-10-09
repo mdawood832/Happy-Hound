@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Cart() {
+function Cart({products}) {
   return (
     <div className='productsBody'>
         <main className='productsMain'>
@@ -20,7 +20,14 @@ function Cart() {
                         <div className='cartBody'>
                             <div className='cartItem'>
                                 <div className='cartProduct'>
-                                    <img src="" alt="" />
+                                    <img src=""
+                                     alt=""
+                                     className='cartProductImg'
+                                    />
+                                </div>
+
+                                <div className='cartProductInfo'>
+
                                 </div>
                             </div>
                         </div>

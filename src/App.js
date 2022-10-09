@@ -14,7 +14,13 @@ import Cart from './pages/Cart'
 import ExploreMore from './components/ExploreMore'
 import Login from './pages/Login';
 import Register from './pages/Register';
+<<<<<<< HEAD
 import AboutUs from './pages/AboutUs'
+=======
+// import Footer from './components/Footer'
+import AboutUs from './pages/AboutUs'
+
+>>>>>>> c8dcff3ab0fac0dd9c37f9f7bf37af93af4fa14f
 
 
 
@@ -64,11 +70,7 @@ class App extends Component {
       fetch(baseURL + '/products/' + product._id, {
           method: 'PUT',
           body: JSON.stringify({
-              name: product.name,
-              imgURL: product.imgURL,
-              description: product.description,
-              type: product.type,
-              price: product.price
+            type: +product.type +1
           }),
           headers: {
               'Content-Type': 'application/json'
@@ -119,7 +121,6 @@ class App extends Component {
         <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       <Footer/>
-npm      
      
     </div>
 

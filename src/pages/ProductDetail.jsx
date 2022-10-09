@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { Link , useParams} from 'react-router-dom'
 import '../css/ProductDetail.css'
 
-function ProductDetail({products, handleDeleteProduct}){
+function ProductDetail({products, handleDeleteProduct, handleEditProduct}){
     const { id } = useParams()
     const product = products.find(product => product._id === id)
 
@@ -16,7 +16,7 @@ function ProductDetail({products, handleDeleteProduct}){
 
                         <div className='backToProducts'>
                             <Link to='/products' className='productsLink'>
-                               <h2> <FontAwesomeIcon icon='arrow-left' />  &nbsp; Dog Accessories </h2>
+                               <h2> <FontAwesomeIcon icon='arrow-left' />  &nbsp; Products </h2>
                             </Link>
                         </div>
 
@@ -59,11 +59,12 @@ function ProductDetail({products, handleDeleteProduct}){
                                 <br/>
 
                                 <div className='editDelete'>
-                                    <Link to='/edit/:id'>
-                                        <button className='editProduct'>
-                                            Edit Product 
+                                  
+                                <button className='editProduct' onClick={() => handleEditProduct(product)}
+										>
+										❤️   {product.type}
                                         </button>
-                                    </Link>
+                                   
 
                                     <br/>
                                     <br/>

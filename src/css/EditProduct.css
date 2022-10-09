@@ -1,0 +1,10 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.submitFormButton{
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #ADD8E6 ;
+}
