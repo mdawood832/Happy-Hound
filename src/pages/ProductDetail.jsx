@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 import { Link , useParams} from 'react-router-dom'
 import '../css/ProductDetail.css'
 
-function ProductDetail({products, handleDeleteProduct}){
+function ProductDetail({products, handleDeleteProduct, handleEditProduct}){
     const { id } = useParams()
     const product = products.find(product => product._id === id)
 
@@ -59,11 +59,12 @@ function ProductDetail({products, handleDeleteProduct}){
                                 <br/>
 
                                 <div className='editDelete'>
-                                    <Link to={'/edit/'+ product._id}>
-                                        <button className='editProduct'>
-                                            Edit Product 
+                                  
+                                <button className='editProduct' onClick={() => handleEditProduct(product)}
+										>
+										❤️   {product.type}
                                         </button>
-                                    </Link>
+                                   
 
                                     <br/>
                                     <br/>
