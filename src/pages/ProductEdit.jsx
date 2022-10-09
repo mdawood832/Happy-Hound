@@ -29,37 +29,39 @@ handleChange = (e) => {
    
   };
 
-  handleEditProduct = (e, product) => {
-      e.preventDefault()
-    fetch(baseURL + '/products/' + product._id, {
-        method: 'PUT',
-        body: JSON.stringify({
-            name: this.state.name,
-            imgURL: this.state.imgURL,
-            description: this.state.description,
-            type: this.state.type,
-            price: this.state.price,
-            id: this.state.price
-        }),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then((res) => res.json())
-    .then((resJson) => {
-        console.log(resJson)
-        const copyProducts = [...this.state.products];
-        const findIndex = this.state.products.findIndex(
-            (product) => product._id === resJson._id
-        );
-        copyProducts[findIndex] = resJson
-        this.setState({
-            products: copyProducts,
-        });
-        // this.props.handleEditProduct(resJson._id)
-        console.log(this.props)
-    });
-};
+//   handleEditProduct = (e, product) => {
+//       e.preventDefault()
+      
+//     fetch(baseURL + '/products/' + product._id, {
+//         method: 'PUT',
+//         body: JSON.stringify({
+//             name: this.state.name,
+//             imgURL: this.state.imgURL,
+//             description: this.state.description,
+//             type: this.state.type,
+//             price: this.state.price,
+//             id: this.state.price
+//         }),
+//         headers: {
+//             'Content-Type': 'application/json',
+//         },
+//         credentials: "include"
+//     })
+//     .then((res) => res.json())
+//     .then((resJson) => {
+//         console.log(resJson)
+//         const copyProducts = [...this.state.products];
+//         const findIndex = this.state.products.findIndex(
+//             (product) => product._id === resJson._id
+//         );
+//         copyProducts[findIndex] = resJson
+//         this.setState({
+//             products: copyProducts,
+//         });
+//         // this.props.handleEditProduct(resJson._id)
+//         console.log(this.props)
+//     });
+// };
 
 
 

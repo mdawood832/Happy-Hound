@@ -60,33 +60,37 @@ class App extends Component {
     this.setState({ products: copyProducts });
   };
 
-  //   handleEditProduct = (product) => {
-  //     fetch(baseURL + '/products/' + product._id, {
-  //         method: 'PUT',
-  //         body: JSON.stringify({
-  //             name: product.name,
-  //             imgURL: product.imgURL,
-  //             description: product.description,
-  //             type: product.type,
-  //             price: product.price
-  //         }),
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //         }
-  //     })
-  //     .then((res) => res.json())
-  //     .then((resJson) => {
-  //         // console.log(resJson)
-  //         const copyProducts = [...this.state.products];
-  //         const findIndex = this.state.products.findIndex(
-  //             (product) => product._id === resJson._id
-  //         );
-  //         copyProducts[findIndex] = resJson
-  //         this.setState({
-  //             products: copyProducts,
-  //         });
-  //     });
-  // };
+    handleEditProduct = (product) => {
+      fetch(baseURL + '/products/' + product._id, {
+          method: 'PUT',
+          body: JSON.stringify({
+            type: +product.type +1
+          }),
+          headers: {
+              'Content-Type': 'application/json'
+          }
+      })
+      .then((res) => res.json())
+      .then((resJson) => {
+          // console.log(resJson)
+          const copyProducts = [...this.state.products];
+          const findIndex = this.state.products.findIndex(
+              (product) => product._id === resJson._id
+          );
+          copyProducts[findIndex] = resJson
+          this.setState({
+              products: copyProducts,
+          });
+      });
+  };
+
+  handleChange = (e) => {
+    // console.log("test ", e.target)
+    e.preventDefault();
+    this.setState({
+        [e.target.id]: e.target.value
+    })
+  }
 
   handleDeleteProduct = (id) => {
     fetch(baseURL + "/products/" + id, {
@@ -116,7 +120,7 @@ class App extends Component {
         <Route path='/edit/:id' element={ <ProductEdit products={this.state.products} handleEditProduct={this.handleEditProduct}  />}/>
         <Route path='/create' element={<CreateProduct />} />
         <Route path='/cart' element={<Cart products={this.state.products}/>} />
-        <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleDeleteProduct={this.handleDeleteProduct} />}/>
+        <Route path='/detail/:id' element={<ProductDetail products={this.state.products} handleEditProduct={this.handleEditProduct} handleChange={this.handleChange} handleDeleteProduct={this.handleDeleteProduct} />}/>
       </Routes>
       <Footer/>
       
