@@ -14,7 +14,6 @@ import Cart from './pages/Cart'
 import ExploreMore from './components/ExploreMore'
 import Login from './pages/Login';
 import Register from './pages/Register';
-// import Footer from './components/Footer'
 import AboutUs from './pages/AboutUs'
 
 
